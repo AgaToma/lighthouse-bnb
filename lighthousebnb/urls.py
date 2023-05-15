@@ -18,7 +18,7 @@ from django.urls import path, include
 from allauth.account.views import signup, login, logout
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("home.urls")),
-    path("accounts/", include("allauth.urls")),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('', include('home.urls')),
 ]
