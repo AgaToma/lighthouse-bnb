@@ -30,7 +30,7 @@ class Room(models.Model):
         size=[400, None], quality=75, upload_to='rooms/', force_format='WEBP',
         blank=False, null=False)
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    
+   
     class Meta:
         ordering = ['-capacity']
 

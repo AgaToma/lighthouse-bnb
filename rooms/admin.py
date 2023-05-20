@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Room
 
 
+@admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -9,9 +10,8 @@ class RoomAdmin(admin.ModelAdmin):
         'view_type',
         'capacity',
         'description',
-        'image'
     )
     list_filter = ('capacity',)
+    search_fields = ('name', 'room_no', 'capacity', 'view_type')
 
 
-admin.site.register(Room)
