@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'home',
     'users',
+    'rooms',
 ]
 
 SITE_ID = 1
