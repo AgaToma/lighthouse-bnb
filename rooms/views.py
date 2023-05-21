@@ -1,7 +1,7 @@
 from django.views.generic import CreateView
 from .models import Room
 from .forms import AddRoomForm
-from django.contrib.auth.mixin import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class AddRoom(LoginRequiredMixin, CreateView):

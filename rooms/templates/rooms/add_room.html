@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Room{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" ecntype="multipart/form-data">
+        <h1>Create Room</h1>
+        {% csrf_token %}
+        {{ form.media }}
+    </form>
+</div>
+{% endblock %}
