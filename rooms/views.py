@@ -1,9 +1,10 @@
 from django.views.generic import CreateView
 from .models import Room
 from .forms import AddRoomForm
+from django.contrib.auth.mixin import LoginRequiredMixin
 
 
-class AddRoom(CreateView):
+class AddRoom(LoginRequiredMixin, CreateView):
     """
     View for creating rooms by staff
     """
@@ -11,5 +12,9 @@ class AddRoom(CreateView):
     model = Room
     form_class = AddRoomForm
     success_url = '/rooms/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AddRoom, seld).form_valid(form)
 
     
