@@ -3,6 +3,6 @@ from .views import AddRoom, Rooms
 
 
 urlpatterns = [
-    path('', AddRoom.as_view(), name='add_room'),
-    path('rooms/', Rooms.as_view(), name='rooms')
+    path('add/', AddRoom.as_view(), name='add_room'),
+    path('', Rooms.as_view(), name='rooms')
 ]

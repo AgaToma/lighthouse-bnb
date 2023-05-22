@@ -27,8 +27,13 @@ class Room(models.Model):
     capacity = models.IntegerField(choices=CAPACITY, default=1)
     description = RichTextField(max_length=10000, null=False, blank=False)
     image = ResizedImageField(
-        size=[400, None], quality=75, upload_to='rooms/', force_format='WEBP',
-        blank=False, null=False)
+        size=[400, None],
+        quality=75,
+        upload_to="rooms/",
+        force_format="WEBP",
+        blank=False,
+        null=False,
+    )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
    
     class Meta:

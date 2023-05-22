@@ -50,15 +50,19 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'crispy_forms',
-    'crispy_bootstrap5',
-    'cloudinary',
     'djrichtextfield',
+
+    # Apps
     'home',
     'users',
     'rooms',
+
+    # Other
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 SITE_ID = 1
@@ -183,6 +187,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 
 # Default primary key field type

@@ -8,7 +8,7 @@
     {% for room in rooms %}
     <a href="#" class="rooms" aria-label="Click to view {{ room.name }}">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ room.image }}" alt="{{ room.image_alt }}">
+            <img class="card-img-top" src="{{ room.image.url }}" alt="{{ room.image_alt }}">
             <div class="card-body">
                 <h5 class="card-title">{{ room.name }}</h5>
                 <p class="card-text">Sleeps up to
