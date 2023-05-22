@@ -15,6 +15,6 @@ class AddRoom(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(AddRoom, seld).form_valid(form)
+        return super(AddRoom, self).form_valid(form)
 
     
