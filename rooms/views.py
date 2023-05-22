@@ -1,7 +1,16 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from .models import Room
 from .forms import AddRoomForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class Rooms(ListView):
+    """View for showing all rooms"""
+    template_name = 'rooms/rooms.html'
+    model = Room
+    context_object_name = 'rooms'
+
+
 
 
 class AddRoom(LoginRequiredMixin, CreateView):
