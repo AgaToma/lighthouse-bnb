@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from .models import Room
 from .forms import AddRoomForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -11,6 +11,11 @@ class Rooms(ListView):
     context_object_name = 'rooms'
 
 
+class RoomDetails(DetailView):
+    """View for showing room details"""
+    template_name = 'rooms/room_details.html'
+    model = Room
+    context_object_name = 'room'
 
 
 class AddRoom(LoginRequiredMixin, UserPassesTestMixin, CreateView):
