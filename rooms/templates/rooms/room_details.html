@@ -4,7 +4,26 @@
 
 {% block content %}
 <div class="container">
+    <div class="room-name">
+        <h1>{{ room.name }}</h1>
+    </div>
+    <div class="room-info">
+        <div>
+            <h2>View {{ room.view }}</h2>
+        </div>
+        <div>
+            <h2>Sleeps {{ room.capacity }}</h2>
+        </div>
+    </div>
+    <div class="room-img">
+        <img src="{{ room.image.url }}" alt="{{ room.image_alt }}">
 
+    </div>
+    <div class="room-description">
+        <h3>Description</h3>
+        <p>{{ room.description }}</p>
+        <h4>{{ room.room_no }}</h4>
+    </div>
 </div>
 
 {% endblock %}
