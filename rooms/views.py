@@ -41,6 +41,7 @@ class DeleteRoom(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     model = Room
     success_url = '/rooms/'
+    template_name = 'rooms/delete_room.html'
 
     def test_func(self):
         return self.request.user.is_admin
