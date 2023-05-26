@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from .models import Room
 from .forms import AddRoomForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -34,4 +34,13 @@ class AddRoom(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     def test_func(self):
         return self.request.user.is_admin
 
-    
+
+class DeleteRoom(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    View for deleting rooms by staff
+    """
+    model = Room
+    success_url = '/rooms/'
+
+    def test_func(self):
+        return self.request.user.is_admin
