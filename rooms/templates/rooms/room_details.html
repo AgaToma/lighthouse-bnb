@@ -26,7 +26,7 @@
     </div>
     {% if user.is_admin %}
     <div>
-        <a href="" class="btn">Edit Room</a>
+        <a href="{% url 'edit_room' room.id %}" class="btn">Edit Room</a>
         <a href="{% url 'delete_room' room.id %}" class="btn">Delete Room</a>
     </div>
     {% endif %}

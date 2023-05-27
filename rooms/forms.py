@@ -3,7 +3,7 @@ from djrichtextfield.widgets import RichTextWidget
 from .models import Room
 
 
-class AddRoomForm(forms.ModelForm):
+class RoomForm(forms.ModelForm):
     """
     Form to create a Room
     """

@@ -1,6 +1,7 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import (CreateView, ListView, 
+                                  DetailView, DeleteView, UpdateView)
 from .models import Room
-from .forms import AddRoomForm
+from .forms import RoomForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -24,12 +25,25 @@ class AddRoom(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """
     template_name = 'rooms/add_room.html'
     model = Room
-    form_class = AddRoomForm
+    form_class = RoomForm
     success_url = '/rooms/'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddRoom, self).form_valid(form)
+
+    def test_func(self):
+        return self.request.user.is_admin
+
+
+class EditRoom(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    View for updating rooms by staff
+    """
+    template_name = 'rooms/edit_room.html'
+    model = Room
+    success_url = '/rooms/'
+    form_class = RoomForm
 
     def test_func(self):
         return self.request.user.is_admin
