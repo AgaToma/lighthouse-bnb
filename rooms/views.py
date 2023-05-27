@@ -2,6 +2,7 @@ from django.views.generic import (CreateView, ListView,
                                   DetailView, DeleteView, UpdateView)
 from .models import Room
 from .forms import RoomForm
+from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
@@ -10,6 +11,18 @@ class Rooms(ListView):
     template_name = 'rooms/rooms.html'
     model = Room
     context_object_name = 'rooms'
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            rooms = self.model.objects.filter(
+                Q(name__icontains=query) |
+                Q(capacity__icontains=query) |
+                Q(view_type__icontains=query)
+            )
+        else:
+            rooms = self.model.objects.all()
+        return rooms
 
 
 class RoomDetails(DetailView):
