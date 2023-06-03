@@ -23,6 +23,7 @@ class Booking(models.Model):
     check_in = models.DateField()
     check_out = models.DateField()
     no_of_ppl = models.IntegerField(choices=CAPACITY, default=1)
+    breakfast = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def get_booking_length = 
