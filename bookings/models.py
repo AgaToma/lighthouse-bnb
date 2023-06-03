@@ -1,6 +1,6 @@
 from django.db import models
-from users import User
-from rooms import Room
+from users.models import User
+from rooms.models import Room
 
 
 class Booking(models.Model):
