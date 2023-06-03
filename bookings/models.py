@@ -40,7 +40,8 @@ class Booking(models.Model):
         return days_till
 
     @property
-    def booking_length = self.check_out.date() - self.check_in.date()
+    def booking_length(self):
+        return self.check_out.date() - self.check_in.date()
 
 
     
