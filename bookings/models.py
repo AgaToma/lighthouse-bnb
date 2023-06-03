@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 from users.models import User
 from rooms.models import Room
 
@@ -27,12 +28,21 @@ class Booking(models.Model):
     breakfast = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    def get_booking_length = 
-
     class Meta:
         ordering = ['check_in']
-    
+      
     def __str__(self):
         return str(self.pk)
+
+    @property
+    def days_until(self):
+        days_till = self.check_in.date() - date.today()
+        return days_till
+
+    @property
+    def booking_length = self.check_out.date() - self.check_in.date()
+
+
+    
 
 
