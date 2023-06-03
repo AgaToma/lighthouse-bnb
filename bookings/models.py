@@ -20,7 +20,7 @@ class Booking(models.Model):
     created_by = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, to_field='email')
     main_guest_name = models.CharField(
-        max_length=200, default=CustomUser.get_full_name)
+        max_length=200, default=CustomUser().get_full_name())
     room = models.ForeignKey(
         Room, on_delete=models.CASCADE, to_field='name')
     check_in = models.DateField()
