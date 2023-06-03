@@ -17,7 +17,8 @@ class Booking(models.Model):
     """
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, to_field=email)
-    main_guest_name = models.CharField(max_length=200, blank=False)
+    main_guest_name = models.CharField(
+        max_length=200, default=User.get_full_name)
     room = models.ForeignKey(
         Room, on_delete=models.CASCADE, to_field=name)
     check_in = models.DateField()
@@ -30,3 +31,8 @@ class Booking(models.Model):
 
     class Meta:
         ordering = ['check_in']
+    
+    def __str__(self):
+        return str(self.pk)
+
+
