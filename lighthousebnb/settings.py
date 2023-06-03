@@ -53,10 +53,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djrichtextfield',
 
-    # Apps
+    # My Apps
     'home',
     'users',
     'rooms',
+    'bookings',
 
     # Other
     'crispy_forms',
