@@ -1,7 +1,8 @@
 from django.db import models
 from datetime import date
-from users.models import User
 from rooms.models import Room
+from users.models import CustomUser
+
 
 # Choice fields
 no_of_ppl = (
@@ -17,14 +18,14 @@ class Booking(models.Model):
     A model to create and manage bookings
     """
     created_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, to_field=email)
+        CustomUser, on_delete=models.CASCADE, to_field='email')
     main_guest_name = models.CharField(
-        max_length=200, default=User.get_full_name)
+        max_length=200, default=CustomUser.get_full_name)
     room = models.ForeignKey(
-        Room, on_delete=models.CASCADE, to_field=name)
+        Room, on_delete=models.CASCADE, to_field='name')
     check_in = models.DateField()
     check_out = models.DateField()
-    no_of_ppl = models.IntegerField(choices=CAPACITY, default=1)
+    no_of_ppl = models.IntegerField(choices=no_of_ppl, default=1)
     breakfast = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 

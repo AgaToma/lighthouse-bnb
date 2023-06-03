@@ -21,7 +21,7 @@ class Room(models.Model):
     """
     A model to create and manage rooms
     """
-    name = models.CharField(max_length=150, null=False, blank=False)
+    name = models.CharField(max_length=150, null=False, blank=False, unique=True)
     room_no = models.IntegerField(null=False, blank=False)
     view_type = models.CharField(max_length=50, choices=VIEW_TYPES, default='ocean')
     capacity = models.IntegerField(choices=CAPACITY, default=1)
