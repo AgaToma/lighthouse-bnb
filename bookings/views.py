@@ -3,7 +3,7 @@ from django.views.generic import (CreateView, ListView,
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from rooms.models import Room
 from .models import Booking
-from .forms import 
+from .forms import BookingForm
 
 
 class MakeBooking(LoginRequiredMixin, CreateView):
