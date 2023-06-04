@@ -44,6 +44,10 @@ class Booking(models.Model):
     def booking_length(self):
         return self.check_out.date() - self.check_in.date()
 
+    @property
+    def is_past_due(self):
+        return date.today() > self.check_in.date()
+
 
     
 
