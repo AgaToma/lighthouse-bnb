@@ -33,7 +33,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
                     self.request,
                     f'Thank you for your booking. Your booking id is {self.pk}')
         
-        return super(MakeBooking, self).form_valid(form)
+    return super(MakeBooking, self).form_valid(form)
             
 
         
