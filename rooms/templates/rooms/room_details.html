@@ -9,7 +9,7 @@
     </div>
     <div class="room-info">
         <div>
-            <h2>View {{ room.view }}</h2>
+            <h2>View {{ room.view_type }}</h2>
         </div>
         <div>
             <h2>Sleeps {{ room.capacity }}</h2>
@@ -23,6 +23,9 @@
         <h3>Description</h3>
         <p>{{ room.description|safe }}</p>
         <h4>{{ room.room_no }}</h4>
+    </div>
+    <div>
+        <a href="{% url 'new_booking' %}" class="btn">Book Room</a>
     </div>
     {% if user.is_admin %}
     <div>
