@@ -26,11 +26,11 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         # check room availability
         booking_list = Booking.objects.filter(room=room)
         for booking in booking_list:
-            if booking.check_in.date() > check_out.date() or booking.check_out.date() < check_in.date():
+            if booking.check_in > check_out or booking.check_out < check_in:
                 form.instance.room = room
                 messages.success(
                     self.request,
-                    f'Thank you for your booking. Your booking id is {self.pk}')
+                    f'Thank you for your booking. Your booking id is {self.id}')
                     
         return super(MakeBooking, self).form_valid(form)
             

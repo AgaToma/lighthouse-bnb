@@ -1,5 +1,6 @@
 from datetime import date
 from django import forms
+from django.utils.translation import gettext as _
 from django.core.exceptions import ValidationError
 from rooms.models import Room
 from .models import Booking
@@ -24,15 +25,16 @@ class BookingForm(forms.ModelForm):
         }
 
     def clean(self):
+        room = self.cleaned_data['room']
         check_in = self.cleaned_data['check_in']
         check_out = self.cleaned_data['check_out']
         no_of_ppl = self.cleaned_data['no_of_ppl']
 
         # check if selected room has correct capacity
         if room not in Room.objects.filter(capacity__gte=no_of_ppl):
-            raise ValidationError(
+            raise ValidationError(_(
                         'Your selected room is too small for' +
-                        no_of_ppl 'people. Please choose a bigger room')
+                        '%s people. Please choose a bigger room') % no_of_ppl)
 
         # validate check in date is before checkout
         if check_in > check_out:
@@ -43,11 +45,11 @@ class BookingForm(forms.ModelForm):
         bookings_list = Booking.objects.filter(room=room)
         availability = []
         for booking in bookings_list:
-            if booking.check_in >= check_out or booking_checkout <= check_in:
+            if booking.check_in >= check_out or booking.check_out <= check_in:
                 availability.append(True)
             else:
                 availability.append(False)
-        if all(availability) = False:
+        if all(availability) is False:
             raise ValidationError(
                         'This room is not available on the selected dates')
 

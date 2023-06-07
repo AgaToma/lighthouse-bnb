@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import date
+from django.conf import settings
 from rooms.models import Room
 from users.models import CustomUser
 
@@ -18,7 +19,8 @@ class Booking(models.Model):
     A model to create and manage bookings
     """
     created_by = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, to_field='email')
+        CustomUser, on_delete=models.CASCADE,
+        to_field='email', blank=True)
     main_guest_name = models.CharField(
         max_length=200, default=CustomUser().get_full_name())
     room = models.ForeignKey(
