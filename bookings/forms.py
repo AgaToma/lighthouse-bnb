@@ -29,11 +29,28 @@ class BookingForm(forms.ModelForm):
         no_of_ppl = self.cleaned_data['no_of_ppl']
 
         # check if selected room has correct capacity
+        if room not in Room.objects.filter(capacity__gte=no_of_ppl):
+            raise ValidationError(
+                        'Your selected room is too small for' +
+                        no_of_ppl 'people. Please choose a bigger room')
+
+        # validate check in date is before checkout
+        if check_in > check_out:
+            raise ValidationError(
+                        'Check_in date needs to be before check_out date')
 
         # get all room bookings and check for availability
+        bookings_list = Booking.objects.filter(room=room)
+        availability = []
+        for booking in bookings_list:
+            if booking.check_in >= check_out or booking_checkout <= check_in:
+                availability.append(True)
+            else:
+                availability.append(False)
+        if all(availability) = False:
+            raise ValidationError(
+                        'This room is not available on the selected dates')
 
-        # if no availability redirect to general booking
-    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['check_in'].widget.attrs['class'] = 'datepicker'
