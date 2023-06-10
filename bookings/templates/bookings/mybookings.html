@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}My Bookings{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>My Bookings</h1>
+
+    {% for booking in bookings %}
+    <a href="{% url 'booking_details' booking.id %}" class="bookings" aria-label="Click to view {{ booking.id }}">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ booking.room.image.url }}" alt="{{ booking.room.image_alt }}">
+            <h5 class="card-title">{{ booking.room }}</h5>
+            <h5 class="card-title">{{ booking.main_guest_name }}</h5>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

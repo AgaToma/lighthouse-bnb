@@ -1,12 +1,11 @@
 from django.views.generic import (CreateView, ListView,
                                   DetailView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from datetime import date
+from datetime import date, timedelta
 from django.contrib import messages
 from users.models import CustomUser
 from rooms.models import Room
 from .models import Booking
-from .models import Booking as BookingModel
 from .forms import BookingForm
 
 
@@ -20,13 +19,12 @@ class MakeBooking(LoginRequiredMixin, CreateView):
     model = Booking
 
     def form_valid(self, form):
-        # user = CustomUser.objects.get(email=self.request.user.email)
+        
         form.instance.created_by = self.request.user
         room = form.cleaned_data['room']
         check_in = form.cleaned_data['check_in']
         check_out = form.cleaned_data['check_out']
         
-
         # check room availability
         booking_list = Booking.objects.filter(room=room)
         for booking in booking_list:
@@ -37,6 +35,29 @@ class MakeBooking(LoginRequiredMixin, CreateView):
                     # f'Thank you for your booking. Your booking id is {self.id}')
                     
         return super(MakeBooking, self).form_valid(form)
+
+
+class BookingsList(LoginRequiredMixin, UserPassesTestMixin, ListView):
+    """View for showing bookings for authenticated user"""
+    template_name = 'bookings/mybookings.html'
+    model = Booking
+    context_object_name = 'bookings'
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if self.request.user.is_admin:
+            if query:
+                bookings = self.model.objects.filter(
+                    Q(check_in__icontains=query) |
+                    Q(created_by__icontains=query) |
+                    Q(main_guest_name__icontains=query)|
+                    Q(room__icontains=query))
+        else:
+            bookings = self.model.objects.filter(
+                created_by=self.request.user.email)
+    
+    def test_func(self):
+        return self.request.user
             
 
         

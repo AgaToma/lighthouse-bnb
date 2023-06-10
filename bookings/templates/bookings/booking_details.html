@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}{{room.name}}{% endblock %}
+
+{% block content %}
+
+<div class="card-body">
+    <h5 class="card-title"> {{ booking.main_guest_name }} will be staying at {{ booking.room.name }}</h5>
+    {% if booking.no_of_ppl > 1 %}
+    with {{ booking.no_of_ppl - 1 }}
+    {% endif %}
+    <p class="card-text">We'll be happy to see you arrive on{{ booking.check_in }}</p>
+    <a href="{% url 'room_details' booking.room.id %}" aria-label="Click to view {{ booking.room.id }}"></a>
+    <p class="card-text">We'll be happy to see you arrive on{{ booking.check_in }}</p>
+    <p class="card-text">We'll be waving you farewell on{{ booking.check_out }}</p>
+    <p class="card-text">There are
+        {% if booking.no_of_ppl == 1 %}
+        1 person
+        {% else %}
+        {{ booking.no_of_ppl }} people
+        {% endif %}
+    </p>
+    <p class="card-text">Breakfast
+        {% if booking.brakfast == True %}
+        We'll be happy to serve you breakfast. It's already on your booking.
+        {% else %}
+        Breakfast is currently not included in your booking. Please let our staff know, if you'd like to
+        order.
+        {% endif %}
+    </p>
+    <p class="card-text">This booking was created by
+        {% if booking.created_by.is_admin == True %}
+        Lighthouse B&B staff.
+        {% else %}
+        {{ booking.created_by }}
+        {% endif %}
+    </p>
+</div>
+
+{% endblock %}
