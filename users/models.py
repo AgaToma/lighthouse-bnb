@@ -42,7 +42,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     """
     Model to create custom user with email instead of userame
     """
-    email = models.EmailField(_("email address"), unique=True)
+    email = models.EmailField(verbose_name='email address', unique=True)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     is_active = models.BooleanField(default=True)

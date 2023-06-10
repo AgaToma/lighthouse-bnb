@@ -10,6 +10,7 @@ class RoomAdmin(admin.ModelAdmin):
         'view_type',
         'capacity',
         'description',
+        'id'
     )
     list_filter = ('capacity',)
     search_fields = ('name', 'room_no', 'capacity', 'view_type')
