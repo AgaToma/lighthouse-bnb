@@ -55,7 +55,7 @@ class BookingsList(LoginRequiredMixin, ListView):
                     Q(main_guest_name__icontains=query) |
                     Q(room__icontains=query))
             else:
-                bookings = Booking.objects.all()
+                bookings = self.model.objects.all()
                 return bookings
         else:
             bookings = self.model.objects.filter(
