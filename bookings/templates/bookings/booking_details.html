@@ -7,7 +7,7 @@
 <div class="card-body">
     <h5 class="card-title"> {{ booking.main_guest_name }} will be staying at {{ booking.room.name }}</h5>
     {% if booking.no_of_ppl > 1 %}
-    with {{ booking.no_of_ppl - 1 }}
+    with {{ booking.no_of_ppl|add:"-5" }}
     {% endif %}
     <p class="card-text">We'll be happy to see you arrive on{{ booking.check_in }}</p>
     <a href="{% url 'room_details' booking.room.id %}" aria-label="Click to view {{ booking.room.id }}"></a>

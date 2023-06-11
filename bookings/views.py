@@ -55,13 +55,19 @@ class BookingsList(LoginRequiredMixin, ListView):
                     Q(main_guest_name__icontains=query) |
                     Q(room__icontains=query))
             else:
-                bookings = self.model.objects.all()
+                bookings = Booking.objects.all()
                 return bookings
         else:
-            bookings = self.model.objects.filter(
+            bookings = Booking.filter(
                 created_by=self.request.user.email)
             return bookings
-    
+
+
+class BookingDetails(DetailView):
+    """View for showing booking details"""
+    template_name = 'bookings/booking_details.html'
+    model = Booking
+    context_object_name = 'booking_details'
     
             
 
