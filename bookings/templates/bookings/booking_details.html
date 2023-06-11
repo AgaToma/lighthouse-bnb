@@ -7,7 +7,9 @@
 <div class="card-body">
     <h5 class="card-title"> {{ object.main_guest_name }} will be staying at {{ object.room.name }}</h5>
     {% if object.no_of_ppl > 1 %}
-    with {{ object.no_of_ppl|add:"-5" }}
+    with {{ object.no_of_ppl|add:-1 }} more person
+    {% elif object.no_of_ppl > 2 %}
+    with {{ object.no_of_ppl|add:-1 }} more people
     {% endif %}
     <p class="card-text">We'll be happy to see you arrive on {{ object.check_in }}</p>
     <p class="card-text">We'll be waving you farewell on {{ object.check_out }}</p>
