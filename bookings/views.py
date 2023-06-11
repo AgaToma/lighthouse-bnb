@@ -58,7 +58,7 @@ class BookingsList(LoginRequiredMixin, ListView):
                 bookings = Booking.objects.all()
                 return bookings
         else:
-            bookings = Booking.filter(
+            bookings = self.model.objects.filter(
                 created_by=self.request.user.email)
             return bookings
 
