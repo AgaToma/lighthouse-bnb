@@ -7,7 +7,7 @@
 
     {% if bookings %}
     {% for booking in object_list %}
-    <a href="{% url 'booking_details' booking.id %}" class="bookings" aria-label="Click to view {{ booking.id }}">
+    <a href="{% url 'booking_details' booking.pk %}" class="bookings" aria-label="Click to view {{ booking.pk }}">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{{ booking.room.image.url }}" alt="{{ booking.room.image_alt }}">
             <h5 class="card-title">{{ booking.room }}</h5>

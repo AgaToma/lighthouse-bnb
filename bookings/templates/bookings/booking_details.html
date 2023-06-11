@@ -5,23 +5,21 @@
 {% block content %}
 
 <div class="card-body">
-    <h5 class="card-title"> {{ booking.main_guest_name }} will be staying at {{ booking.room.name }}</h5>
-    {% if booking.no_of_ppl > 1 %}
-    with {{ booking.no_of_ppl|add:"-5" }}
+    <h5 class="card-title"> {{ object.main_guest_name }} will be staying at {{ object.room.name }}</h5>
+    {% if object.no_of_ppl > 1 %}
+    with {{ object.no_of_ppl|add:"-5" }}
     {% endif %}
-    <p class="card-text">We'll be happy to see you arrive on{{ booking.check_in }}</p>
-    <a href="{% url 'room_details' booking.room.id %}" aria-label="Click to view {{ booking.room.id }}"></a>
-    <p class="card-text">We'll be happy to see you arrive on{{ booking.check_in }}</p>
-    <p class="card-text">We'll be waving you farewell on{{ booking.check_out }}</p>
-    <p class="card-text">There are
-        {% if booking.no_of_ppl == 1 %}
-        1 person
+    <p class="card-text">We'll be happy to see you arrive on {{ object.check_in }}</p>
+    <p class="card-text">We'll be waving you farewell on {{ object.check_out }}</p>
+    <p class="card-text">There
+        {% if object.no_of_ppl == 1 %}
+        is 1 person on your booking.
         {% else %}
-        {{ booking.no_of_ppl }} people
+        are {{ object.no_of_ppl }} people on your booking.
         {% endif %}
     </p>
-    <p class="card-text">Breakfast
-        {% if booking.brakfast == True %}
+    <p class="card-text" id="breakfast">
+        {% if object.breakfast == True %}
         We'll be happy to serve you breakfast. It's already on your booking.
         {% else %}
         Breakfast is currently not included in your booking. Please let our staff know, if you'd like to
@@ -29,10 +27,10 @@
         {% endif %}
     </p>
     <p class="card-text">This booking was created by
-        {% if booking.created_by.is_admin == True %}
+        {% if object.created_by.is_admin == True %}
         Lighthouse B&B staff.
         {% else %}
-        {{ booking.created_by }}
+        {{ object.created_by }}
         {% endif %}
     </p>
 </div>
