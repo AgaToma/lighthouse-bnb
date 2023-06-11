@@ -3,6 +3,7 @@ from django.views.generic import (CreateView, ListView,
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from datetime import date, timedelta
 from django.contrib import messages
+from django.db.models import Q
 from users.models import CustomUser
 from rooms.models import Room
 from .models import Booking
@@ -37,7 +38,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         return super(MakeBooking, self).form_valid(form)
 
 
-class BookingsList(LoginRequiredMixin, UserPassesTestMixin, ListView):
+class BookingsList(LoginRequiredMixin, ListView):
     """View for showing bookings for authenticated user"""
     template_name = 'bookings/mybookings.html'
     model = Booking
@@ -45,19 +46,23 @@ class BookingsList(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
+
         if self.request.user.is_admin:
             if query:
                 bookings = self.model.objects.filter(
                     Q(check_in__icontains=query) |
                     Q(created_by__icontains=query) |
-                    Q(main_guest_name__icontains=query)|
+                    Q(main_guest_name__icontains=query) |
                     Q(room__icontains=query))
+            else:
+                bookings = self.model.objects.all()
+                return bookings
         else:
             bookings = self.model.objects.filter(
                 created_by=self.request.user.email)
+            return bookings
     
-    def test_func(self):
-        return self.request.user
+    
             
 
         
