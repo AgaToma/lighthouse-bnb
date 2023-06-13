@@ -31,9 +31,9 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         for booking in booking_list:
             if booking.check_in > check_out or booking.check_out < check_in:
                 form.instance.room = room
-                # messages.success(
-                    # self.request,
-                    # f'Thank you for your booking. Your booking id is {self.id}')
+        messages.success(
+            self.request,
+            'Thank you for your booking.')
                     
         return super(MakeBooking, self).form_valid(form)
 

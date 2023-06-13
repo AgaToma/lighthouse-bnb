@@ -24,6 +24,14 @@
 
 <body>
     {% include 'includes/header.html' %}
+    {% if messages %}
+    <!-- messages -->
+    <div class="toast">
+        {% for message in messages %}
+        {% include 'includes/booking_success.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
     <h1>Come stay with us</h1>
     {% block content %}
 
