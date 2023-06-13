@@ -2,6 +2,13 @@
 {% block title %}My Bookings{% endblock %}
 
 {% block content %}
+<!--Booking Search for admins-->
+{% if user.is_admin %}
+<form class="d-flex" role="search" method="GET" action="{% url 'mybookings' %}">
+    <input class="form-control me-2" name="q" type="search" placeholder="Search Bokings" aria-label="Search Bookings">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+{% endif %}
 <div class="container">
     <h1>My Bookings {{ user.email }}</h1>
 
