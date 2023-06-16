@@ -2,6 +2,7 @@ from django.views.generic import (CreateView, ListView,
                                   DetailView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from datetime import date, timedelta
+from django.views import generic
 from django.contrib import messages
 from django.db.models import Q
 from users.models import CustomUser
@@ -31,10 +32,10 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         for booking in booking_list:
             if booking.check_in > check_out or booking.check_out < check_in:
                 form.instance.room = room
+
         messages.success(
             self.request,
-            'Thank you for your booking.')
-                    
+            'Thank you for your booking.')  
         return super(MakeBooking, self).form_valid(form)
 
 
