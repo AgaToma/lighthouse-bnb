@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="card-body">
+<div class="container">
     <h5 class="card-title"> {{ object.main_guest_name }} will be staying at {{ object.room.name }}</h5>
     {% if object.no_of_ppl > 1 %}
     with {{ object.no_of_ppl|add:-1 }} more person
@@ -35,6 +35,12 @@
         {{ object.created_by }}
         {% endif %}
     </p>
+    {% if user.is_authenticated %}
+    <div>
+        <a href="{% url 'edit_booking' booking.id %}" class="btn">Edit Booking</a>
+        <a href="{% url 'delete_booking' booking.id %}" class="btn">Delete Booking</a>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}

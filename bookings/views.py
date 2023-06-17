@@ -39,7 +39,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         return super(MakeBooking, self).form_valid(form)
 
 
-class BookingsList(LoginRequiredMixin, ListView):
+class BookingsList(LoginRequiredMixin, UserPassesTestMixin, ListView):
     """View for showing bookings for authenticated user"""
     template_name = 'bookings/mybookings.html'
     model = Booking
@@ -63,6 +63,12 @@ class BookingsList(LoginRequiredMixin, ListView):
                 created_by=self.request.user.email,
                 check_in__gte=date.today() - timedelta(days=15))
             return bookings
+    
+    def test_func(self):
+        if self.request.user.is_admin:
+            return True
+        else:
+            return self.request.user.email
 
 
 class BookingDetails(DetailView):
@@ -70,7 +76,39 @@ class BookingDetails(DetailView):
     template_name = 'bookings/booking_details.html'
     model = Booking
     context_object_name = 'booking_details'
-    
+
+
+class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    View for editing own bookings for guests or all bookings for admins 
+    """
+    form_class = BookingForm
+    template_name = 'bookings/edit_booking.html'
+    success_url = '/bookings/'
+    model = Booking
+
+    def form_valid(self, form):
+        
+        room = form.cleaned_data['room']
+        check_in = form.cleaned_data['check_in']
+        check_out = form.cleaned_data['check_out']
+        
+        # check room availability
+        booking_list = Booking.objects.filter(room=room)
+        for booking in booking_list:
+            if booking.check_in > check_out or booking.check_out < check_in:
+                form.instance.room = room
+
+        messages.success(
+            self.request,
+            'Your booking was successfully changed.')  
+        return super(MakeBooking, self).form_valid(form)
+
+    def test_func(self):
+        if self.request.user.is_admin:
+            return True
+        else:
+            return self.request.user.email
             
 
         
