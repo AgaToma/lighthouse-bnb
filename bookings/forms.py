@@ -37,7 +37,7 @@ class BookingForm(forms.ModelForm):
                         '%s people. Please choose a bigger room') % no_of_ppl)
 
         # validate check in date is before checkout
-        if check_in > check_out:
+        if check_in > check_out or check_in == check_out:
             raise ValidationError(
                         'Check_in date needs to be before check_out date')
 
