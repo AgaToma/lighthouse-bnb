@@ -110,7 +110,7 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     View for deleting bookings
     """
-    model = Room
+    model = Booking
     success_url = '/bookings/'
     template_name = 'rooms/delete_booking.html'
 
