@@ -1,6 +1,7 @@
 from django.views.generic import (CreateView, ListView,
                                   DetailView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse_lazy
 from datetime import date, timedelta
 from django.views import generic
 from django.contrib import messages
@@ -39,7 +40,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         return super(MakeBooking, self).form_valid(form)
 
 
-class BookingsList(LoginRequiredMixin, UserPassesTestMixin, ListView):
+class BookingsList(LoginRequiredMixin, ListView):
     """View for showing bookings for authenticated user"""
     template_name = 'bookings/mybookings.html'
     model = Booking
@@ -64,12 +65,6 @@ class BookingsList(LoginRequiredMixin, UserPassesTestMixin, ListView):
                 check_in__gte=date.today() - timedelta(days=15))
             return bookings
     
-    def test_func(self):
-        if self.request.user.is_admin:
-            return True
-        else:
-            return self.request.user.email
-
 
 class BookingDetails(DetailView):
     """View for showing booking details"""
@@ -84,9 +79,9 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     form_class = BookingForm
     template_name = 'bookings/edit_booking.html'
-    success_url = '/bookings/'
+    success_url = reverse_lazy('bookings')
     model = Booking
-
+    
     def form_valid(self, form):
         
         room = form.cleaned_data['room']
@@ -103,7 +98,29 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             self.request,
             'Your booking was successfully changed.')  
         return super(MakeBooking, self).form_valid(form)
+    
+    def test_func(self):
+        if self.request.user.is_admin:
+            return True
+        else:
+            return self.request.user.email
 
+
+class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    View for deleting bookings
+    """
+    model = Room
+    success_url = '/bookings/'
+    template_name = 'rooms/delete_booking.html'
+
+    def form_valid(self, form):
+        messages.success(
+            self.request,
+            'Your booking was successfully deleted.'
+        )
+        return super(DeleteBooking, self).form_valid(form)
+    
     def test_func(self):
         if self.request.user.is_admin:
             return True

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Booking {{ object.pk }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <h4>Are you sure you want to delete <strong>"{{ object.pk }}"</strong>?</h4>
+        <input type="submit" value="Confirm" class="btn">
+    </form>
+</div>
+{% endblock %}

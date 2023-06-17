@@ -35,12 +35,12 @@
         {{ object.created_by }}
         {% endif %}
     </p>
-    {% if user.is_authenticated %}
+    {% if user.is_admin %}
     <div>
-        <a href="{% url 'edit_booking' booking.id %}" class="btn">Edit Booking</a>
-        <a href="{% url 'delete_booking' booking.id %}" class="btn">Delete Booking</a>
+        <a href="{% url 'edit_booking' booking.pk %}" class="btn">Edit Booking</a>
+        <a href="{% url 'delete_booking' booking.pk %}" class="btn">Delete Booking</a>
     </div>
     {% endif %}
-</div>
 
+</div>
 {% endblock %}
