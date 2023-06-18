@@ -30,8 +30,15 @@ class TestViews(TestCase):
             image_alt='test room img'
         )
 
-        def test_booking_page(self):
-            """Test if correct page and template renders"""
-            response = self.client.get('bookings/newbooking/')
-            self.assertEqual(response.status_code, 200)
-            self.assertTemplateUsed(response, 'bookings/new_booking.html')
+    def test_booking_page(self):
+        """Test if correct page and template renders"""
+        response = self.client.get('bookings/newbooking/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'bookings/new_booking.html')
+    
+    # test booking details
+    # test edit booking
+    # test delete booking
+    # test unauthorized crud
+    # test admin edit/delete all
+    # test redirecting if not logged in
