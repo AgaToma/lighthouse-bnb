@@ -79,7 +79,7 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     form_class = BookingForm
     template_name = 'bookings/edit_booking.html'
-    success_url = reverse_lazy('bookings')
+    success_url = '/bookings/'
     model = Booking
     
     def form_valid(self, form):
@@ -87,17 +87,19 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         room = form.cleaned_data['room']
         check_in = form.cleaned_data['check_in']
         check_out = form.cleaned_data['check_out']
+        current_booking = form.instance
         
         # check room availability
         booking_list = Booking.objects.filter(room=room)
-        for booking in booking_list:
+        new_booking_list = booking_list.exclude(id=current_booking.id)
+        for booking in new_booking_list:
             if booking.check_in > check_out or booking.check_out < check_in:
                 form.instance.room = room
 
         messages.success(
             self.request,
             'Your booking was successfully changed.')  
-        return super(MakeBooking, self).form_valid(form)
+        return super(EditBooking, self).form_valid(form)
     
     def test_func(self):
         if self.request.user.is_admin:

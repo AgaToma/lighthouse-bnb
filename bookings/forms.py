@@ -1,7 +1,7 @@
 from datetime import date
 from django import forms
 from django.utils.translation import gettext as _
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from rooms.models import Room
 from .models import Booking
 
@@ -23,12 +23,19 @@ class BookingForm(forms.ModelForm):
             'no_of_ppl': 'Number of Guests',
             'breakfast': 'Include Breakfast?'
         }
-
+    
     def clean(self):
         room = self.cleaned_data['room']
         check_in = self.cleaned_data['check_in']
         check_out = self.cleaned_data['check_out']
         no_of_ppl = self.cleaned_data['no_of_ppl']
+    
+        # check if there is booking made that will be edited now
+        current_booking = None
+        try:
+            current_booking = Booking.objects.get(id=self.instance.pk)
+        except ObjectDoesNotExist:
+            pass
 
         # check if selected room has correct capacity
         if room not in Room.objects.filter(capacity__gte=no_of_ppl):
@@ -43,8 +50,9 @@ class BookingForm(forms.ModelForm):
 
         # get all room bookings and check for availability
         bookings_list = Booking.objects.filter(room=room)
+        new_booking_list = bookings_list.exclude(id=current_booking.id)
         availability = []
-        for booking in bookings_list:
+        for booking in new_booking_list:
             if booking.check_in >= check_out or booking.check_out <= check_in:
                 availability.append(True)
             else:
@@ -58,5 +66,6 @@ class BookingForm(forms.ModelForm):
         self.fields['check_in'].widget.attrs['class'] = 'datepicker'
         self.fields['check_out'].widget.attrs['class'] = 'datepicker'
         self.fields['room'].empty_label = None
+
 
 
