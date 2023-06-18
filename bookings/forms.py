@@ -24,6 +24,12 @@ class BookingForm(forms.ModelForm):
             'breakfast': 'Include Breakfast?'
         }
     
+    check_in = forms.DateField(widget=forms.DateInput(attrs={
+        'id': 'datePicker', 'class': 'form-control', 'type': 'date'}))
+    
+    check_out = forms.DateField(widget=forms.DateInput(attrs={
+        'id': 'datePicker', 'class': 'form-control', 'type': 'date'}))
+    
     def clean(self):
         room = self.cleaned_data['room']
         check_in = self.cleaned_data['check_in']
@@ -63,8 +69,6 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['check_in'].widget.attrs['class'] = 'datepicker'
-        self.fields['check_out'].widget.attrs['class'] = 'datepicker'
         self.fields['room'].empty_label = None
 
 
