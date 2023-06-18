@@ -7,7 +7,7 @@ from rooms.models import Room
 
 
 class TestViews(TestCase):
-    """Tests for booking app views"""
+    """Tests for logged in user"""
     def setUp(self):
         # create test user
         email = "testuser@test.ie"
@@ -29,3 +29,9 @@ class TestViews(TestCase):
             image='https://res.cloudinary.com/dml1pgzdn/image/upload/v1/media/rooms/istockphoto-1368436973-170667a_oyfhyv',
             image_alt='test room img'
         )
+
+        def test_booking_page(self):
+            """Test if correct page and template renders"""
+            response = self.client.get('bookings/newbooking/')
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'bookings/new_booking.html')
