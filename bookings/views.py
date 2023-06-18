@@ -112,7 +112,7 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     model = Booking
     success_url = '/bookings/'
-    template_name = 'rooms/delete_booking.html'
+    template_name = 'bookings/delete_booking.html'
 
     def form_valid(self, form):
         messages.success(
