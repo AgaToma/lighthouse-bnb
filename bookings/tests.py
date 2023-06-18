@@ -32,7 +32,7 @@ class TestViews(TestCase):
 
     def test_booking_page(self):
         """Test if correct page and template renders"""
-        response = self.client.get('bookings/newbooking/')
+        response = self.client.get('/bookings/newbooking/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bookings/new_booking.html')
     
