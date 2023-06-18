@@ -9,7 +9,7 @@ from django.db.models import Q
 from users.models import CustomUser
 from rooms.models import Room
 from .models import Booking
-from .forms import BookingForm
+from .forms import BookingForm, BookingEditForm
 
 
 class MakeBooking(LoginRequiredMixin, CreateView):
@@ -36,7 +36,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
 
         messages.success(
             self.request,
-            'Thank you for your booking.')  
+            'Your booking was successful. Thank you')  
         return super(MakeBooking, self).form_valid(form)
 
 
@@ -77,7 +77,7 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     View for editing own bookings for guests or all bookings for admins 
     """
-    form_class = BookingForm
+    form_class = BookingEditForm
     template_name = 'bookings/edit_booking.html'
     success_url = '/bookings/'
     model = Booking
