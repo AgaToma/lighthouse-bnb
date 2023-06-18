@@ -36,7 +36,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
 
         messages.success(
             self.request,
-            'Your booking was successful. Thank you')  
+            f'You have successfully booked {room}. Thank you for your booking')  
         return super(MakeBooking, self).form_valid(form)
 
 
