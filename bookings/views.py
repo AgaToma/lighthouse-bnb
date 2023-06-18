@@ -100,8 +100,10 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super(MakeBooking, self).form_valid(form)
     
     def test_func(self):
-        item = self.get_object()
-        return self.request.user == item.created_by
+        if self.request.user.is_admin:
+            return True
+        else:
+            return self.request.user.email
 
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
