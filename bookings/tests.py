@@ -21,11 +21,11 @@ class TestViews(TestCase):
     
         # create test room
         self.room = Room.objects.create(
-            name = 'Test Room'
-            room_no = '0'
-            view_type = 'ocean'
-            capacity = '3'
-            description = 'Test room for testing'
-            image = 'https://res.cloudinary.com/dml1pgzdn/image/upload/v1/media/rooms/istockphoto-1368436973-170667a_oyfhyv'
-            image_alt = 'test room img'
+            name='Test Room',
+            room_no='0',
+            view_type='ocean',
+            capacity='3',
+            description='Test room for testing',
+            image='https://res.cloudinary.com/dml1pgzdn/image/upload/v1/media/rooms/istockphoto-1368436973-170667a_oyfhyv',
+            image_alt='test room img'
         )
