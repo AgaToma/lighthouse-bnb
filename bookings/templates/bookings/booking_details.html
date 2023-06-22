@@ -5,8 +5,9 @@
 {% block content %}
 
 <div class="container">
-    <h5 class="card-title"> {{ object.main_guest_name }} will be staying at {{ object.room.name }}</h5>
-
+    <h5 class="card-title"> {{ object.main_guest_name }} will be staying at
+        <a href="{% url 'room_details' object.room.id %}">{{ object.room.name }}</a>
+    </h5>
     {% if object.no_of_ppl > 1 %}
     with {{ object.no_of_ppl|add:-1 }} more person
     {% elif object.no_of_ppl > 2 %}
