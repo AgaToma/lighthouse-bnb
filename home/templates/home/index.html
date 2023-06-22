@@ -15,11 +15,11 @@
             </div>
             <div class="carousel-inner">
                 {% for room in rooms %}
-                <div class="carousel-item d-flex justify-content-center {% if forloop.first %} active {% endif %}">
+                <div class="carousel-item d-flex justify-content-center active">
                     <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="text-center">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{ room.name }}</h5>
-                        <p><a href="{% url 'room_details' room.id %}"></a></p>
+                        <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
                     </div>
                 </div>
 
