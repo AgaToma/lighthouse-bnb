@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="container-fluid hero-img"></div>
     <div id="carousel-container" class="container-fluid p-4 align-self-center">
-        <div id="roomsCarousel" class="carousel slide align-self-center">
+        <div id="roomsCarousel" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -15,14 +15,23 @@
             </div>
             <div class="carousel-inner">
                 {% for room in rooms %}
-                <div class="carousel-item d-flex justify-content-center active">
+                {% if forloop.first %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
                     <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="text-center">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{ room.name }}</h5>
                         <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
                     </div>
                 </div>
-
+                {% else %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="text-center">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ room.name }}</h5>
+                        <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
+                    </div>
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#roomsCarousel" data-bs-slide="prev">
