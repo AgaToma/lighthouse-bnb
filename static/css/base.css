@@ -9,11 +9,6 @@
 }
 
 /* Carousel */
-#roomsCarousel {
-    height: 40vh;
-}
-
-.test {
-    height: 200px;
-    width: 200px;
+#carousel-container {
+    height: 35vh;
 }
