@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="container-fluid hero-img"></div>
     <div id="car-container" class="container-fluid p-4">
-        <div id="roomsCarousel" class="carousel slide" data-bs-wrap="false">
+        <div id="roomsCarousel" class="carousel slide" data-bs-wrap="true">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -25,7 +25,6 @@
                         <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
                     </div>
                 </div>
-
                 {% else %}
                 <div class="carousel-item {% if forloop.first %} active {% endif %}">
                     <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="text-center">
