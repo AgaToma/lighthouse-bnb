@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+header nav {
+    font-family: 'Marck Script', cursive;
+}
+
+nav>img {
+    size: 5vh
+}
+
 /* Hero image */
 .hero-img {
     background-image: url(../images/background.webp);
