@@ -2,10 +2,11 @@
 
 header nav {
     font-family: 'Marck Script', cursive;
+    color: black;
 }
 
 .logo {
-    size: 5vh
+    height: 5vh
 }
 
 /* Hero image */

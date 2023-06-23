@@ -1,7 +1,7 @@
 {% load static %}
 
 <header>
-    <nav class="navbar navbar-expand-lg fixed-top bg-light">
+    <nav class="navbar navbar-expand-lg fs-4 fixed-top bg-light">
         <div class="container-fluid">
             <a class="navbar-brand">
                 <img src="{% static 'images/logo.png' %}" alt="lighthouse bnb logo" class="logo">
@@ -13,7 +13,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link marck active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
@@ -24,7 +24,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
@@ -36,7 +36,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'rooms' %}">Rooms</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link" href="{% url 'mybookings' %}">Bookings</a>
                     </li>
                 </ul>
