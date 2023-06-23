@@ -4,7 +4,7 @@ header nav {
     font-family: 'Marck Script', cursive;
 }
 
-nav>img {
+.logo {
     size: 5vh
 }
 
@@ -12,7 +12,7 @@ nav>img {
 .hero-img {
     background-image: url(../images/background.webp);
     height: 70vh;
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
 
