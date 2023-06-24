@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Josefin+Sans&family=Marck+Script&display=swap');
 
 html,
 body {
@@ -10,9 +10,14 @@ body {
     flex-direction: column;
 }
 
+
 main {
     flex: 1 0 auto;
     margin-top: 10vh;
+}
+
+h1 {
+    font-family: 'Courgette', cursive;
 }
 
 .black {
