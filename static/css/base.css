@@ -15,6 +15,7 @@ header nav {
 
 .active {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 
 .nav-link:hover {
