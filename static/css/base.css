@@ -50,4 +50,17 @@ header nav {
 /* Footer */
 footer {
     background-color: #f9fbfd;
+    margin-bottom: 0.1rem;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+.git-link {
+    text-decoration: none;
+}
+
+.git-link:hover {
+    color: rgb(16, 182, 14);
 }
