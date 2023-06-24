@@ -2,28 +2,39 @@
 {% block title %}My Bookings{% endblock %}
 
 {% block content %}
-<!--Booking Search for admins-->
-{% if user.is_admin %}
-<form class="d-flex" role="search" method="GET" action="{% url 'mybookings' %}">
-    <input class="form-control me-2" name="q" type="search" placeholder="Search Bokings" aria-label="Search Bookings">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
-{% endif %}
 <div class="container">
-    <h1>My Bookings {{ user.email }}</h1>
-
-    {% if bookings %}
-    {% for booking in object_list %}
-    <a href="{% url 'booking_details' booking.pk %}" class="bookings" aria-label="Click to view {{ booking.pk }}">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ booking.room.image.url }}" alt="{{ booking.room.image_alt }}">
-            <h5 class="card-title">{{ booking.room }}</h5>
-            <h5 class="card-title">{{ booking.main_guest_name }}</h5>
-        </div>
-    </a>
-    {% endfor %}
-    {% else %}
-    <p>You have no upcoming bookings.</p>
+    <!--Booking Search for admins-->
+    {% if user.is_admin %}
+    <h1 class="text-center">Admin Bookings Page</h1>
+    <form class="d-flex" role="search" method="GET" action="{% url 'mybookings' %}">
+        <input class="form-control me-2" name="q" type="search" placeholder="Search Bokings"
+            aria-label="Search Bookings">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
     {% endif %}
+    <div class="container">
+        {% if user.not_admin %}
+        <h1 class="text-center">My Bookings</h1>
+        {% endif %}
+        <div class="container d-flex flex-row flex-wrap justify-content-center">
+            {% if bookings %}
+            {% for booking in object_list %}
+            <a href="{% url 'booking_details' booking.pk %}" class="m-2 custom-card"
+                aria-label="Click to view {{ booking.pk }}">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ booking.room.image.url }}" alt="{{ booking.room.image_alt }}">
+                    <h5 class="card-title">{{ booking.room }}</h5>
+                    <h5 class="card-title">{{ booking.main_guest_name }}</h5>
+                </div>
+            </a>
+            {% endfor %}
+            {% else %}
+            <p>User {{ user.email }} has no upcoming bookings.</p>
+            {% endif %}
+            {% if user.not_admin %}
+            <p class="text-center">Bookings made by {{ user.email }}</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}

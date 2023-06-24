@@ -3,7 +3,7 @@
 {% block title %}{{room.name}}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container text-center">
     <div class="room-name">
         <h1>{{ room.name }}</h1>
     </div>
@@ -25,12 +25,10 @@
         <h4>{{ room.room_no }}</h4>
     </div>
     <div>
-        <a href="{% url 'new_booking' %}" class="btn">Book Room</a>
-    </div>
-    {% if user.is_admin %}
-    <div>
-        <a href="{% url 'edit_room' room.id %}" class="btn">Edit Room</a>
-        <a href="{% url 'delete_room' room.id %}" class="btn">Delete Room</a>
+        <a href="{% url 'new_booking' %}" class="btn btn-success m-2">Book Room</a>
+        {% if user.is_admin %}
+        <a href="{% url 'edit_room' room.id %}" class="btn btn-warning m-2">Edit Room</a>
+        <a href="{% url 'delete_room' room.id %}" class="btn btn-danger m-2">Delete Room</a>
     </div>
     {% endif %}
 </div>

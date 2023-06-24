@@ -89,13 +89,13 @@ footer p {
 }
 
 /* Rooms */
-.rooms {
+.custom-card {
     text-decoration: none;
     text-align: center;
     color: black;
 }
 
-.rooms:hover {
+.custom-card:hover {
     color: rgb(16, 182, 14);
     box-shadow: 1px 1px 15px 10px rgba(86, 185, 235, 0.5);
 }
