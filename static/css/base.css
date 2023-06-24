@@ -5,13 +5,23 @@ body {
     height: 100%;
 }
 
-header nav {
-    font-family: 'Marck Script', cursive;
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 10vh;
+}
+
+.black {
     color: black;
 }
 
-
-.black {
+/* Header */
+header nav {
+    font-family: 'Marck Script', cursive;
     color: black;
 }
 
