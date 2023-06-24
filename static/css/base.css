@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 
+body {
+    background-color: rgba(234, 239, 240, 0.2);
+}
+
 header nav {
     font-family: 'Marck Script', cursive;
     color: black;
 }
+
 
 .black {
     color: black;
@@ -39,4 +44,9 @@ header nav {
 /* Carousel */
 #car-container {
     height: 35vh;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
 }
