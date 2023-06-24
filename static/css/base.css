@@ -5,6 +5,22 @@ header nav {
     color: black;
 }
 
+.black {
+    color: black;
+}
+
+.navbar {
+    color: black;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.nav-link:hover {
+    color: rgb(16, 182, 14);
+}
+
 .logo {
     height: 5vh
 }
