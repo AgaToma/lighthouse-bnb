@@ -16,7 +16,8 @@ main {
     margin-top: 10vh;
 }
 
-h1 {
+h1,
+h5 {
     font-family: 'Courgette', cursive;
 }
 
@@ -37,6 +38,10 @@ header nav {
 .active {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+}
+
+.nav-link.active:hover {
+    color: rgb(16, 182, 14);
 }
 
 .nav-link:hover {
@@ -62,6 +67,8 @@ header nav {
     height: 35vh;
 }
 
+
+
 /* Footer */
 footer {
     background-color: #f9fbfd;
@@ -79,4 +86,16 @@ footer p {
 
 .git-link:hover {
     color: rgb(16, 182, 14);
+}
+
+/* Rooms */
+.rooms {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.rooms:hover {
+    color: rgb(16, 182, 14);
+    box-shadow: 1px 1px 15px 10px rgba(86, 185, 235, 0.5);
 }
