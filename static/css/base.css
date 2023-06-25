@@ -114,3 +114,7 @@ p a {
     background-color: rgb(236 245 245);
     padding: 2%;
 }
+
+.float-r {
+    float: right;
+}
