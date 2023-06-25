@@ -109,3 +109,8 @@ footer p {
 p a {
     text-decoration: underline;
 }
+
+#room-details {
+    background-color: rgb(236 245 245);
+    padding: 2%;
+}
