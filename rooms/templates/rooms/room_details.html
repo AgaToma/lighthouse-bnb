@@ -25,12 +25,18 @@
         <h4>{{ room.room_no }}</h4>
     </div>
     <div>
+        {% if user.is_authenticated %}
         <a href="{% url 'new_booking' %}" class="btn btn-success m-2">Book Room</a>
+        {% else %}
+        <p>Please <a href="{% url 'account_signup' %}">register</a> or <a a href="{% url 'account_login' %}">log in</a>
+            to book online.</p>
+        <p>Alternatively, Please give us a call at 0871234567 and our staff will make the booking for you</p>
+        {% endif %}
         {% if user.is_admin %}
         <a href="{% url 'edit_room' room.id %}" class="btn btn-warning m-2">Edit Room</a>
         <a href="{% url 'delete_room' room.id %}" class="btn btn-danger m-2">Delete Room</a>
+        {% endif %}
     </div>
-    {% endif %}
 </div>
 
 {% endblock %}

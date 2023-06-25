@@ -19,12 +19,12 @@
                             href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link black {% if url_name == 'account_logout' %}active{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link black {% if url_name == 'account_signup' %}active{% endif %}"
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
@@ -39,14 +39,16 @@
                             href="{% url 'add_room' %}">Create Room</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link black {% if url_name == 'rooms' %}active{% endif %}"
                             href="{% url 'rooms' %}">Rooms</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item px-2">
                         <a class="nav-link black {% if url_name == 'mybookings' %}active{% endif %}"
                             href="{% url 'mybookings' %}">Bookings</a>
                     </li>
+                    {% endif %}
                 </ul>
                 <!--Room Search-->
                 <form class="d-flex" role="search" method="GET" action="{% url 'rooms' %}">
