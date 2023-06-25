@@ -30,6 +30,12 @@ a:hover {
     color: rgb(16, 182, 14);
 }
 
+.form {
+    box-shadow: 1px -1px 7px 0 #00000061;
+    border-radius: 5px;
+
+}
+
 /* Header */
 header nav {
     font-family: 'Marck Script', cursive;
@@ -88,4 +94,8 @@ footer p {
 
 .custom-card:hover {
     box-shadow: 1px 1px 15px 10px rgba(86, 185, 235, 0.5);
+}
+
+p a {
+    text-decoration: underline;
 }
