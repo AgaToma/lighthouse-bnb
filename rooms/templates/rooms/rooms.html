@@ -11,17 +11,21 @@
                 <img class="card-img-top" src="{{ room.image.url }}" alt="{{ room.image_alt }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ room.name }}</h5>
-                    <p class="card-text">Sleeps up to
-                        {% if room.capacity == 1 %}
-                        1 person
-                        {% else %}
-                        {{ room.capacity }} people
-                        {% endif %}
-                    </p>
+                    <div class="row">
+                        <p class="card-text col-sm-6">
+                            <i class="fa-solid fa-people-roof"></i>
+                            {{ room.capacity }}
+                        </p>
+                        <p class="card-text col-sm-6">
+                            <i class="fa-solid fa-mountain-sun"></i> {{ room.view_type }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </a>
         {% endfor %}
     </div>
 </div>
+
+
 {% endblock %}
