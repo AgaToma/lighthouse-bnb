@@ -3,32 +3,37 @@
 {% block title %}{{room.name}}{% endblock %}
 
 {% block content %}
-<div class="container text-center">
-    <div class="room-name">
+<div class="container room-details p-5">
+    <div class="text-center mb-4">
         <h1>{{ room.name }}</h1>
     </div>
-    <div class="room-info">
-        <div>
-            <h2>View {{ room.view_type }}</h2>
-        </div>
-        <div>
-            <h2>Sleeps {{ room.capacity }}</h2>
-        </div>
-    </div>
-    <div class="room-img">
-        <img src="{{ room.image.url }}" alt="{{ room.image_alt }}">
+    <div class="d-flex flex-row flex-wrap">
+        <div class="col-12 col-lg-6 d-flex flex-column flex-wrap">
+            <div class="room-info">
+                <div class="d-flex flex-row flex-wrap">
+                    <p><strong>View:</strong> {{ room.view_type }}</p>
+                </div>
+                <div class="d-flex flex-row">
+                    <p><strong>Sleeps:</strong> {{ room.capacity }}</p>
+                </div>
+            </div>
+            <div class="room-description">
+                <h6>Description</h6>
+                <p>{{ room.description|safe }}</p>
+                <p><strong>Room number: </strong>{{ room.room_no }}</p>
+            </div>
 
+        </div>
+        <div class="d-flex col-12 col-lg-6">
+            <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="w-100">
+        </div>
     </div>
-    <div class="room-description">
-        <h3>Description</h3>
-        <p>{{ room.description|safe }}</p>
-        <h4>{{ room.room_no }}</h4>
-    </div>
-    <div>
+    <div class="d-flex flex-row flex-wrap justify-content-center mt-5">
         {% if user.is_authenticated %}
         <a href="{% url 'new_booking' %}" class="btn btn-success m-2">Book Room</a>
         {% else %}
-        <p>Please <a href="{% url 'account_signup' %}">register</a> or <a a href="{% url 'account_login' %}">log in</a>
+        <p>Please <a href="{% url 'account_signup' %}">register</a> or <a a href="{% url 'account_login' %}">log
+                in</a>
             to book online.</p>
         <p>Alternatively, Please give us a call at 0871234567 and our staff will make the booking for you</p>
         {% endif %}

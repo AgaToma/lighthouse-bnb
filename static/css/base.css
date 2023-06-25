@@ -34,7 +34,8 @@ a:hover {
     margin-top: 10vh;
 }
 
-.form {
+.form,
+.room-details {
     box-shadow: 1px -1px 7px 0 #00000061;
     border-radius: 5px;
 
