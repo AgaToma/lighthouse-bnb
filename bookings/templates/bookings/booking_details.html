@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<div class="container">
-    <h5 class="card-title"> {{ object.main_guest_name }} will be staying at
+<div class="container room-details p-3 mt-2 w-80 text-center">
+    <h5 class="card-title p-2"> {{ object.main_guest_name }} will be staying at
         <a href="{% url 'room_details' object.room.id %}">{{ object.room.name }}</a>
     </h5>
     {% if object.no_of_ppl > 1 %}
@@ -37,9 +37,9 @@
         {{ object.created_by }}
         {% endif %}
     </p>
-    <div>
-        <a href="{% url 'edit_booking' object.id %}" class="btn">Edit Booking</a>
-        <a href="{% url 'delete_booking' object.id %}" class="btn">Delete Booking</a>
+    <div class="mt-2">
+        <a href="{% url 'edit_booking' object.id %}" class="btn btn-outline-info m-2">Edit Booking</a>
+        <a href="{% url 'delete_booking' object.id %}" class="btn btn-outline-danger m-2">Delete Booking</a>
     </div>
 </div>
 {% endblock %}

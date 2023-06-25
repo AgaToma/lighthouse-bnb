@@ -110,7 +110,7 @@ p a {
     text-decoration: underline;
 }
 
-#room-details {
+.room-details-bckgrnd {
     background-color: rgb(236 245 245);
     padding: 2%;
 }
