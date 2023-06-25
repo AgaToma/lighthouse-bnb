@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>403 - Unauthorized Access</h1>
+    <p>You don't have permissions to perform this action.</p>
+    <img src="{% static 'images/403.png' %}">
+    <a href="{% url 'home' %}">Please go back this way</a>
+</div>
+{% endblock %}

@@ -6,8 +6,8 @@
     <h1 class="text-center">Our rooms</h1>
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for room in rooms %}
-        <a href="{% url 'room_details' room.id %}" class="m-4 custom-card" aria-label="Click to view {{ room.name }}">
-            <div class="card" style="width: 18rem;">
+        <a href="{% url 'room_details' room.id %}" class="m-4 text-center" aria-label="Click to view {{ room.name }}">
+            <div class="card custom-card" style="width: 18rem;">
                 <img class="card-img-top" src="{{ room.image.url }}" alt="{{ room.image_alt }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ room.name }}</h5>
