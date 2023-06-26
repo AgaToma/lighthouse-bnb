@@ -52,20 +52,18 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'djrichtextfield',
-
+    # Other
+    'cloudinary',
+    'crispy_forms',
+    'crispy_bootstrap5',
     # My Apps
     'home',
     'users',
     'rooms',
     'bookings',
-
-    # Other
-    'crispy_forms',
-    'crispy_bootstrap5',
-    'cloudinary',
-    'cloudinary_storage',
 ]
 
 SITE_ID = 1
