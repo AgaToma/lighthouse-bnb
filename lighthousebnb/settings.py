@@ -29,8 +29,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+if not IS_HEROKU_APP:
+    DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-agatoma-lighthouse-bnb-gsfm8rvl1l.us2.codeanyapp.com',
@@ -128,7 +130,7 @@ WSGI_APPLICATION = 'lighthousebnb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'test' in sys.argv or 'test_coverage' in sys.argv:
+if IS_HEROKU_APP:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -194,7 +196,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 if 'DEVELOPMENT' in os.environ:
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
