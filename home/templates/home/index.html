@@ -6,50 +6,50 @@
     <div class="container-fluid hero-img"></div>
     <div class="container d-flex column">
         <div class="container hero-description"></div>
-        <div id="car-container" class="container-fluid p-4">
-            <div id="roomsCarousel" class="carousel slide" data-bs-wrap="true">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
+        <div id="roomsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#roomsCarousel" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
                     {% for room in rooms %}
                     {% if forloop.first %}
-                    <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                        <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="text-center">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ room.name }}</h5>
-                            <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
-                        </div>
+                    <img src="{{ room.image.url }}" class="d-block w-100" alt="{{ room.image_alt }}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ room.name }}</h5>
+                        <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
+                        {% endif %}
+                        {% endfor %}
                     </div>
-                    {% else %}
-                    <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                        <img src="{{ room.image.url }}" alt="{{ room.image_alt }}" class="text-center">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ room.name }}</h5>
-                            <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#roomsCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#roomsCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#roomsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#roomsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </div>
