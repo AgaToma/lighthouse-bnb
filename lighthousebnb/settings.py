@@ -29,9 +29,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+development = os.environ.get('DEVELOPMENT', False)
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = development
 
 ALLOWED_HOSTS = [
     '8000-agatoma-lighthouse-bnb-gsfm8rvl1l.us2.codeanyapp.com',
@@ -126,7 +127,7 @@ WSGI_APPLICATION = 'lighthousebnb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'test' in sys.argv or 'test_coverage' in sys.argv:
+if development:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -135,8 +136,8 @@ if 'test' in sys.argv or 'test_coverage' in sys.argv:
     }
 else:
     DATABASES = {
-            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 
 # Password validation
