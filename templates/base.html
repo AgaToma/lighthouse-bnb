@@ -4,12 +4,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Aga Tomaszewska">
-    <meta name="description" content="Bed and breakfast in county Mayo, Ireland">
-    <meta name="keywords" content="bed and breakfast, ocean view, Mayo, Irish coast">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Aga Tomaszewska" />
+    <meta name="description" content="Bed and breakfast in county Mayo, Ireland" />
+    <meta name="keywords" content="bed and breakfast, ocean view, Mayo, Irish coast" />
 
     {% block extra_css %}
     <!--Bootsrap-->
@@ -17,13 +17,13 @@
         integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--My custom CSS-->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}" />
     {% endblock %}
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}" />
 
     {% block onload_js %}
     <!--Bootstrap JS-->
@@ -43,17 +43,10 @@
     <!-- Messages -->
     {% include 'includes/messages.html' %}
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <main>{% block content %} {% endblock %}</main>
 
     <!-- Footer -->
-    {% include 'includes/footer.html' %}
-
-    {% block extra_js %}
-
-    {% endblock %}
+    {% include 'includes/footer.html' %} {% block extra_js %} {% endblock %}
 </body>
 
 </html>

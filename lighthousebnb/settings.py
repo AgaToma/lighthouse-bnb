@@ -32,10 +32,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 development = os.environ.get('DEVELOPMENT', False)
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = development
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-agatoma-lighthouse-bnb-gsfm8rvl1l.us2.codeanyapp.com',
+    '8000-agatoma-lighthouse-bnb-dicl52duxg.us2.codeanyapp.com',
     'lighthouse-bnb.herokuapp.com',
     'localhost',
 ]
