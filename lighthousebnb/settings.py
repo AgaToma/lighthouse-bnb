@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 development = os.environ.get('DEVELOPMENT', False)
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = [
     '8000-agatoma-lighthouse-bnb-dicl52duxg.us2.codeanyapp.com',
@@ -194,13 +194,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+if 'DEVELOPMENT' in os.environ:
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-# CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 
 # Default primary key field type
