@@ -70,7 +70,8 @@ header nav {
     height: 5vh
 }
 
-/* Hero image */
+/* Landing page */
+
 .hero-img {
     background-image: url(../images/background.webp);
     height: 70vh;
@@ -80,10 +81,11 @@ header nav {
 
 }
 
-/* Carousel */
-#car-container {
-    height: 35vh;
+.hero-description {
+    height: 6vh;
 }
+
+
 
 /* Footer */
 footer {
