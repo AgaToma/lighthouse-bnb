@@ -16,15 +16,11 @@
                     aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                    {% for room in rooms %}
-                    {% if forloop.first %}
-                    <img src="{{ room.image.url }}" class="d-block w-100" alt="{{ room.image_alt }}">
+                <div class="carousel-item active">
+                    <img src="" class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>{{ room.name }}</h5>
-                        <p><a href="{% url 'room_details' room.id %}">Details and booking</a></p>
-                        {% endif %}
-                        {% endfor %}
+                        <h5></h5>
+                        <p></p>
                     </div>
                 </div>
                 <div class="carousel-item">
