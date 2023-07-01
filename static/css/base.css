@@ -16,6 +16,7 @@ main {
 }
 
 h1,
+h3,
 h5 {
     font-family: 'Courgette', cursive;
 }
@@ -78,7 +79,21 @@ header nav {
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 1%;
+}
 
+.motto-container {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+
+.motto {
+    background: linear-gradient(to right, rgba(141, 152, 169, 0.4), rgba(124, 135, 152,
+                0.6));
+    padding: 1%;
+    border-radius: 15px 50px 30px;
+    color: white;
 }
 
 .hero-description {
