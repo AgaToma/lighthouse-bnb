@@ -68,7 +68,9 @@ header nav {
 }
 
 .logo {
-    height: 5vh
+    border-radius: 5px;
+    height: 5vh;
+
 }
 
 /* Landing page */
@@ -80,7 +82,24 @@ header nav {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1%;
+    /* animates zoom effect on loading page*/
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
 }
+
+/* creates the level of zoom for hero image */
+@keyframes hero-zoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+
 
 .motto-container {
     display: flex;
