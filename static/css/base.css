@@ -82,6 +82,7 @@ header nav {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1%;
+    margin: 2%;
     /* animates zoom effect on loading page*/
     animation-name: hero-zoom;
     animation-duration: 5s;
