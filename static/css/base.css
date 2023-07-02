@@ -116,14 +116,16 @@ header nav {
 }
 
 .landing-wrapper {
-    display: flex;
-    flex-wrap: wrap;
     margin-top: 7%;
 }
 
+.carousel-wrapper {
+    width: 60%;
+}
 
 .hero-description {
     height: 6vh;
+    width: 40%;
 }
 
 
@@ -161,4 +163,12 @@ p a {
 
 .float-r {
     float: right;
+}
+
+@media (max-width: 768px) {
+
+    .hero-description,
+    .carousel-wrapper {
+        width: 100%;
+    }
 }
