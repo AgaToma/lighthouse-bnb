@@ -56,10 +56,13 @@
                     {% endif %}
                 </ul>
                 <!--Room Search-->
-                <form class="d-flex" role="search" method="GET" action="{% url 'rooms' %}">
+                <form class="d-flex r-search" role="search" method="GET" action="{% url 'rooms' %}">
                     <input class="form-control me-2" name="q" type="search" placeholder="Search Rooms"
                         aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
+                    <span class="tooltiptext">
+                        <p>Search by number of people, room name or type of view</p>
+                    </span>
                 </form>
             </div>
         </div>
