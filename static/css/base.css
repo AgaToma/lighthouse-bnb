@@ -70,12 +70,12 @@ header nav {
 .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: rgba(240, 245, 247, 0.5);
-    color: #4e4b4b;
+    background-color: rgba(153, 215, 168, 0.5);
+    color: #343333;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    font-size: 10px;
+    font-size: 12px;
     font-family: sans-serif;
     letter-spacing: 1px;
 
@@ -83,6 +83,11 @@ header nav {
     position: absolute;
     z-index: 1;
     top: 100%;
+}
+
+.tooltiptext p {
+    margin: 0;
+    padding: 1%;
 }
 
 .r-search:hover .tooltiptext {
@@ -203,5 +208,9 @@ p a {
 
     .motto-container {
         margin: 5%;
+    }
+
+    .hero-description p {
+        font-size: smaller;
     }
 }
