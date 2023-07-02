@@ -111,8 +111,8 @@ header nav {
     background: linear-gradient(to right, rgba(141, 152, 169, 0.4), rgba(124, 135, 152,
                 0.6));
     padding: 1%;
-    border-radius: 15px 50px 30px;
     color: white;
+    border-radius: 5px;
 }
 
 .landing-wrapper {
@@ -170,5 +170,9 @@ p a {
     .hero-description,
     .carousel-wrapper {
         width: 100%;
+    }
+
+    .motto-container {
+        margin: 5%;
     }
 }
