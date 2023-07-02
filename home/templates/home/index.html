@@ -11,7 +11,20 @@
         </div>
     </div>
     <div class="container d-flex flex-row flex-wrap landing-wrapper">
-        <div class="container hero-description">Welcome to our bnb</div>
+        <div class="container hero-description">
+            <h3>Welcome to our B&B</h3>
+            <p>We offer a range of rooms with outstanding views of ocean, garden or mountain.
+                To see details, please visit our <a href="{% url 'rooms' %}">rooms page</a>.
+            </p>
+            <p>Our delicious breakfasts included in the price of your stay
+                are made with local produce and cater to different tastes and dietary needs.</p>
+            <p>All payments are made on arrival. If there are any children on your booking, our staff can apply
+                a discount of 5% off booking total per child.
+            </p>
+            <p>You need to be registered and logged in to make an online booking via our <a
+                    href="{% url 'rooms' %}">rooms page</a>
+                Alternatively, you can give us a call at 0871234567 and our staff will make the booking for you</p>
+        </div>
         <div class="carousel-wrapper">
             <div id="brekkieCarousel" class="carousel slide">
                 <div class="carousel-indicators">
@@ -29,7 +42,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="{% static 'images/irish-br.webp' %}" class="d-block w-100" alt="irish breakfast">
-                        <div class="carousel-caption d-md-block motto">
+                        <div class="carousel-caption d-md-block">
                             <h5>Irish</h5>
                             <p class="d-sx-none">Nation's beloved eggs, rashers and more with a hearty serving of
                                 veggies
@@ -40,7 +53,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="{% static 'images/cont-br.webp' %}" class="d-block w-100" alt="continental brakfast">
-                        <div class="carousel-caption d-md-block motto">
+                        <div class="carousel-caption d-md-block">
                             <h5>Continental</h5>
                             <p class="d-sx-none">A selection of fruit, veg, toast and more for those who want something
                                 different</p>
@@ -49,7 +62,7 @@
                     <div class="carousel-item">
                         <img src="{% static 'images/gluten-free.webp' %}" class="d-block w-100"
                             alt="gluten-free breakfast">
-                        <div class="carousel-caption d-md-block motto">
+                        <div class="carousel-caption d-md-block">
                             <h5>Gluten-free</h5>
                             <p class="d-sx-none">Hearty fruit porrigde or mix of Irish & continental with gluten-free
                                 bread, when gluten
@@ -60,7 +73,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="{% static 'images/vegan-br.webp' %}" class="d-block w-100" alt="vegan breakfast">
-                        <div class="carousel-caption d-md-block motto">
+                        <div class="carousel-caption d-md-block">
                             <h5>Vegan</h5>
                             <p class="d-sx-none">Fresh home made baguette with delicious sides to kick-start the day for
                                 those on fully
@@ -71,9 +84,9 @@
                     <div class="carousel-item">
                         <img src="{% static 'images/br-in-bed.webp' %}" class="d-block w-100"
                             alt="gluten-free breakfast">
-                        <div class="carousel-caption d-md-block motto">
+                        <div class="carousel-caption d-md-block">
                             <h5>In bed</h5>
-                            <p class="d-sx-none">Choose any of the four options to be brough to your room! Just let our
+                            <p class="d-sx-none">Choose any of the four options to be brought to your room! Just let our
                                 staff know at
                                 least a
                                 day in advance.</p>

@@ -147,11 +147,17 @@ header nav {
 }
 
 .hero-description {
-    height: 6vh;
     width: 40%;
+    height: fit-content;
+    padding: 1%;
 }
 
+.carousel-caption {
+    background: rgba(126, 129, 135, 0.8);
+    padding: 1%;
+    border-radius: 5px;
 
+}
 
 
 /* Footer */
