@@ -18,12 +18,17 @@
             </p>
             <p>Our delicious breakfasts included in the price of your stay
                 are made with local produce and cater to different tastes and dietary needs.</p>
-            <p>All payments are made on arrival. If there are any children on your booking, our staff can apply
+            <p><a data-bs-toggle="collapse" href=".multi-collapse" role="button" aria-expanded="false"
+                    aria-controls="multiCollapse">
+                    Read about payments and bookings</a></p>
+            <p class="collapse multi-collapse">All payments are made on arrival. If there are any children on your
+                booking, our staff can apply
                 a discount of 5% off booking total per child.
             </p>
-            <p>You need to be registered and logged in to make an online booking via our <a
-                    href="{% url 'rooms' %}">rooms page</a>
-                Alternatively, you can give us a call at 0871234567 and our staff will make the booking for you</p>
+            <p class="collapse multi-collapse">You need to be registered and logged in to make an online booking via our
+                <a href="{% url 'rooms' %}">rooms page</a>
+                Alternatively, you can give us a call at 0871234567 and our staff will make the booking for you
+            </p>
         </div>
         <div class="carousel-wrapper">
             <div id="brekkieCarousel" class="carousel slide">
