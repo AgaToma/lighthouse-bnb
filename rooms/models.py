@@ -25,6 +25,7 @@ class Room(models.Model):
     room_no = models.IntegerField(null=False, blank=False)
     view_type = models.CharField(max_length=50, choices=VIEW_TYPES, default='ocean')
     capacity = models.IntegerField(choices=CAPACITY, default=1)
+    price = models.IntegerField(default=80)
     description = RichTextField(max_length=10000, null=False, blank=False)
     image = ResizedImageField(
         size=[400, None],

@@ -9,8 +9,8 @@ class RoomForm(forms.ModelForm):
     """
     class Meta:
         model = Room
-        fields = ['name', 'room_no', 'view_type', 'capacity', 'description',
-                  'image', 'image_alt']
+        fields = ['name', 'room_no', 'view_type', 'capacity', 'price', 
+                  'description', 'image', 'image_alt']
 
         description = forms.CharField(widget=RichTextWidget())
 
@@ -19,6 +19,7 @@ class RoomForm(forms.ModelForm):
             'room_no': 'Room Number',
             'view_type': 'View',
             'capacity': 'Maximum Number of People',
+            'price': 'Price per Night',
             'description': 'Description',
             'image': 'Room Image',
             'image_alt': 'Describe Image'

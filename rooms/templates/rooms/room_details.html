@@ -22,6 +22,7 @@
             <div class="room-description">
                 <h6>Description:</h6>
                 <p>{{ room.description|safe }}</p>
+                <p><strong>Price per night: </strong>€ {{ room.price }}</p>
                 <p><strong>Room number: </strong>{{ room.room_no }}</p>
             </div>
 
@@ -37,7 +38,7 @@
         <p>Please <a href="{% url 'account_signup' %}">register</a> or <a a href="{% url 'account_login' %}">log
                 in</a>
             to book online.</p>
-        <p>Alternatively, Please give us a call at 0871234567 and our staff will make the booking for you</p>
+        <p>Alternatively, please give us a call at 0871234567 and our staff will make the booking for you.</p>
         {% endif %}
         {% if user.is_admin %}
         <a href="{% url 'edit_room' room.id %}" class="btn btn-warning m-2">Edit Room</a>
