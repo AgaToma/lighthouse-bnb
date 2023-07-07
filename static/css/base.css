@@ -199,6 +199,11 @@ p a {
     float: right;
 }
 
+/* Bookings */
+.person {
+    background: linear-gradient(to right, rgba(119, 209, 136, 0.5), rgba(169, 244, 109, 0.5));
+}
+
 @media (max-width: 768px) {
 
     .hero-description,

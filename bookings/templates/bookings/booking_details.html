@@ -10,22 +10,16 @@
     <h5 class="card-title p-2"> {{ object.main_guest_name }} will be staying at
         <a href="{% url 'room_details' object.room.id %}">{{ object.room.name }}</a>
     </h5>
-    <p>Booking price {{ object.get_price }}</p>
-    <p>Booking length {{ object.booking_length }} </p>
-    {% if object.no_of_ppl > 1 %}
-    with {{ object.no_of_ppl|add:-1 }} more person
-    {% elif object.no_of_ppl > 2 %}
-    with {{ object.no_of_ppl|add:-1 }} more people
-    {% endif %}
-    <p class="card-text">We'll be happy to see you arrive on {{ object.check_in }}</p>
-    <p class="card-text">We'll be waving you farewell on {{ object.check_out }}</p>
-    <p class="card-text">There
-        {% if object.no_of_ppl == 1 %}
-        is 1 person on your booking.
-        {% else %}
-        are {{ object.no_of_ppl }} people on your booking.
-        {% endif %}
+    <p class="card-text"><span class="person">
+            {% if object.no_of_ppl > 1 %}
+            with {{ object.no_of_ppl|add:-1 }} more person
+            {% elif object.no_of_ppl > 2 %}
+            with {{ object.no_of_ppl|add:-1 }} more people
+            {% endif %}
+        </span>
     </p>
+    <p class="card-text">We'll be happy to see you arrive on <strong>{{ object.check_in }}</strong>.</p>
+    <p class="card-text">We'll be waving you farewell on <strong>{{ object.check_out }}</strong>.</p>
     <p class="card-text" id="breakfast">
         {% if object.breakfast == True %}
         We'll be happy to serve you breakfast. It's already on your booking.
@@ -34,7 +28,9 @@
         order.
         {% endif %}
     </p>
-    <p class="card-text">This booking was created by
+    <p>Booking price: <strong>{{ object.get_price }} €</strong></p>
+    <p>Booking reference: <strong>{{ object.id }}</strong></p>
+    <p class="card-text small">This booking was created by
         {% if object.created_by.is_admin == True %}
         Lighthouse B&B staff.
         {% else %}
