@@ -50,11 +50,7 @@ class BookingsList(LoginRequiredMixin, ListView):
         query = self.request.GET.get('q')
         if self.request.user.is_admin:
             if query:
-                bookings = self.model.objects.filter(
-                    Q(check_in__icontains=query) |
-                    Q(created_by__icontains=query) |
-                    Q(main_guest_name__icontains=query) |
-                    Q(room__icontains=query))
+                return Booking.objects.filter(id=query)
             else:
                 bookings = self.model.objects.filter(
                     check_in__gte=date.today() - timedelta(days=15))
