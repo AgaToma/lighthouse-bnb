@@ -39,16 +39,21 @@ class Booking(models.Model):
 
     @property
     def days_until(self):
-        days_till = self.check_in.date() - date.today()
+        days_till = self.check_in - date.today()
         return days_till
 
     @property
     def booking_length(self):
-        return self.check_out.date() - self.check_in.date()
+        return self.check_out - self.check_in
+
+    @property
+    def get_price(self):
+        booking_price = self.room.price * self.booking_length
+        return booking_price
 
     @property
     def is_past_due(self):
-        return date.today() > self.check_in.date()
+        return date.today() > self.check_in
 
 
     

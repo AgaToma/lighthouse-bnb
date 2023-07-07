@@ -32,7 +32,7 @@ class MakeBooking(LoginRequiredMixin, CreateView):
         booking_list = Booking.objects.filter(room=room)
         for booking in booking_list:
             if booking.check_in > check_out or booking.check_out < check_in:
-                form.instance.room = room
+                form.instance.room = room  
 
         messages.success(
             self.request,
