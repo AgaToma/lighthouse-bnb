@@ -44,7 +44,8 @@ class Booking(models.Model):
 
     @property
     def booking_length(self):
-        return self.check_out - self.check_in
+        length = (self.check_out - self.check_in).days
+        return length
 
     @property
     def get_price(self):
