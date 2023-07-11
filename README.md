@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Lighthouse BnB Logo](static/images/logo.png)
 
 # Lighthouse B&B
 
@@ -6,6 +6,8 @@ Lightouse B&B is a fictional bed and breakfast in County Mayo, Ireland. The site
 with Django, consists of home app, users app, rooms app & bookings app. They all combine into a system
 with users, rooms and bookings management capabilities. The live site deployed on Heroku
 can be accessed here [Live Site - Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
+
+![Mock Up](docs/readme_images/mockup.PNG)
 
 ## Table of contents
 
