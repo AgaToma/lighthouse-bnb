@@ -59,13 +59,13 @@ User stories were created from a custom GitHub issue template, which had also be
 
 #### Epics & User Stories
 
-** Epic 1 - Setup **
+**Epic 1 - Setup** <br>
 User stories:
 
 - Initial setup of Django and database - As a Developer, I can use Django and a database, so that I can build the website
 - Early deployment on Heroku - As a Developer, I can deploy the project early, so that I can ensure it works
 
-** Epic 2 - Users app & authentication **
+**Epic 2 - Users app & authentication** <br>
 User stories:
 
 - Guest registration - As a Guest, I can register only with my email and password, so that I can make a booking
@@ -73,13 +73,13 @@ User stories:
 - Consistency of account pages with website design - As a User, I can experience visual consistency across the website, so that there's no confusion
 - Admin user - As a staff user, I can access the admin functionalities of the system, so that I can assist guests
 
-** Epic 3 - Rooms app **
+**Epic 3 - Rooms app** <br>
 
 - Guest users can view rooms - As a User, I can view listed rooms, so that I can make my selection
 - Guest users can view room details - As a User, I can see the details of the room, so that I can decide if I would book it
 - Staff users have CRUD access on Room model - Admin user is able to create, update and delete rooms
 
-** Epic 4 - Bookings app **
+**Epic 4 - Bookings app** <br>
 
 - Guest users can book a room - As a Guest, I can book a room, so that I can enjoy my stay
 - Booking confirmation and details for guests - As a Guest, I can receive a booking ID and view details, so that I know my booking is confirmed and can check the details later
@@ -88,18 +88,18 @@ User stories:
 - Price in rooms and bookings apps - As a Guest, I can see room and booking price, so that I can prepare to pay
   As a staff member, I can see room and booking price, so that I can inform the guests
 
-** Epic 5 - Landing page & error pages **
+**Epic 5 - Landing page & error pages** <br>
 
 - Landing page - As a Guest, I can see visual representation of the b&b on the landing page, so that I can identify what the B&B is about
 - Site navigation - As a site user, I can easily navigate, so that I can get where I want on the site
 - Home app - As a developer, I can use home url, so that I can confirm the project is running correctly
 - Error pages - As a site user, I can clearly see the error, so that I know what went wrong
 
-** Epic 6 - Deployment **
+**Epic 6 - Deployment** <br>
 
 - Deployment - As a user, I can view live website in production, so that I can use it's functionality
 
-** Epic 7 - Documentation **
+**Epic 7 - Documentation** <br>
 
 - Documentation - As a Developer, I can keep detailed documentation, so that I can refer to it in the future or share with others
 
