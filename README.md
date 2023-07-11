@@ -12,26 +12,127 @@ can be accessed here [Live Site - Lighthouse BnB](https://lighthouse-bnb.herokua
 ## Table of contents
 
 - [User Experience Design](#user-experience-design)
-- [The Strategy Plane](#the-strategy-plane)
-  - [Site Goals](#site-goals)
-  - [Agile Planning](#agile-planning)
-    - [Epics](#epics)
-    - [User Stories](#user-stories)
-- [The Scope Plane](#the-scope-plane)
-- [The Structure Plane](#the-structure-plane)
-  - [Features](#features)
-  - [Future Features](#future-features)
-- [The Skeleton Plane](#the-skeleton-plane)
-  - [Wireframes](#wireframes)
-  - [Database Design](#database-design)
-- [The Surface Plane](#the-surface-plane)
-  - [Design](#design)
-  - [Colour Palette](#colour-palette)
-  - [Typography](#typography)
-  - [Imagery](#imagery)
+  - [The Strategy Plane](#the-strategy-plane)
+    - [Site Goals](#site-goals)
+    - [Agile Planning](#agile-planning)
+      - [Epics & User Stories ](#epics-and-user-stories)
+  - [The Scope Plane](#the-scope-plane)
+  - [The Structure Plane](#the-structure-plane)
+    - [Features](#features)
+    - [Future Features](#future-features)
+  - [The Skeleton Plane](#the-skeleton-plane)
+    - [Wireframes](#wireframes)
+    - [Database Design](#database-design)
+  - [The Surface Plane](#the-surface-plane)
+    - [Design](#design)
+    - [Colour Palette](#colour-palette)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+- [Testing](#testing)
 - [Deployment](#deployment)
   - [Version Control](#version-control)
   - [Heroku Deployment](#heroku-deployment)
   - [Fork Project](#fork-project)
   - [Clone Project](#fork-project)
-  - [Credits](#credits)
+- [Credits](#credits)
+
+# User Experience Design
+
+## The Strategy Plane
+
+### Site-Goals
+
+The primary goal of the site is to showcase the B&B and it's unique location to potential guests. Guests
+can view rooms list and rooms details, they are also given some functionality to independently register, log in,
+make and manage their bookings.
+Staff users can manage all bookings (create, update, delete), as well as rooms (create, update, delete) via the website. They
+can also manage users in the Django admin portal.
+
+### Agile Planning
+
+The project was developed with agile approach. Work was delivered in small increments spread over 4 sprints. The tasks were
+categorized in a total of 7 epics and 26 user stories. Each user story was assigned approximation of story points. Each user story was
+also given one of the 3 labels - must have, should have, could have. User stories were given acceptance criteria and a list of tasks to complete. All user stories were moved following To Do - In Progess - Done methodology. Some of the could have user stories were moved to a Won't Do category, as they were postponed for future deployments. <br>
+User stories were created from a custom GitHub issue template, which had also been created for this project. Completed user stories were closed as issues, while the future ones were left as open issues. Kanban board from Github Project was used and can be viewed [here](https://github.com/users/AgaToma/projects/3/views/1)
+
+![Kanban image](docs/readme_images/kanban.jpg)
+
+#### Epics & User Stories
+
+** Epic 1 - Setup **
+User stories:
+
+- Initial setup of Django and database - As a Developer, I can use Django and a database, so that I can build the website
+- Early deployment on Heroku - As a Developer, I can deploy the project early, so that I can ensure it works
+
+** Epic 2 - Users app & authentication **
+User stories:
+
+- Guest registration - As a Guest, I can register only with my email and password, so that I can make a booking
+- Registered guests are able to login and logout - As a User, I can login and logout, so that I can see my booking
+- Consistency of account pages with website design - As a User, I can experience visual consistency across the website, so that there's no confusion
+- Admin user - As a staff user, I can access the admin functionalities of the system, so that I can assist guests
+
+** Epic 3 - Rooms app **
+
+- Guest users can view rooms - As a User, I can view listed rooms, so that I can make my selection
+- Guest users can view room details - As a User, I can see the details of the room, so that I can decide if I would book it
+- Staff users have CRUD access on Room model - Admin user is able to create, update and delete rooms
+
+** Epic 4 - Bookings app **
+
+- Guest users can book a room - As a Guest, I can book a room, so that I can enjoy my stay
+- Booking confirmation and details for guests - As a Guest, I can receive a booking ID and view details, so that I know my booking is confirmed and can check the details later
+- Guest user can amend their bookings - As a Guest, I can amend my booking, so that my plans can be flexible
+- Booking management by staff user - As a Staff user, I can manage bookings without having to log in to admin portal, so that I can assist guests
+- Price in rooms and bookings apps - As a Guest, I can see room and booking price, so that I can prepare to pay
+  As a staff member, I can see room and booking price, so that I can inform the guests
+
+** Epic 5 - Landing page & error pages **
+
+- Landing page - As a Guest, I can see visual representation of the b&b on the landing page, so that I can identify what the B&B is about
+- Site navigation - As a site user, I can easily navigate, so that I can get where I want on the site
+- Home app - As a developer, I can use home url, so that I can confirm the project is running correctly
+- Error pages - As a site user, I can clearly see the error, so that I know what went wrong
+
+** Epic 6 - Deployment **
+
+- Deployment - As a user, I can view live website in production, so that I can use it's functionality
+
+** Epic 7 - Documentation **
+
+- Documentation - As a Developer, I can keep detailed documentation, so that I can refer to it in the future or share with others
+
+## The Strategy Plane
+
+Responsiveness, CRUD, Home page UI for guests, Friendly user UI for admins, security - role based access restrictions
+
+## The Structure Plane
+
+### Features
+
+### Future Features
+
+## The Skeleton Plane
+
+### Wireframes
+
+### Database Design
+
+## The Surface Plane
+
+### Design
+
+Pages, cards
+
+### Color palette
+
+### Typography
+
+### Imagery
+
+# Testing
+
+# Deployment
+
+# Credits
