@@ -7,7 +7,7 @@ with Django, consists of home app, users app, rooms app & bookings app. They all
 with users, rooms and bookings management capabilities. The live site deployed on Heroku
 can be accessed here [Live Site - Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
 
-![Mock Up](docs/readme_images/mockup.PNG)
+![Mock Up](docs/readme_images/mockup.png)
 
 ## Table of contents
 
@@ -53,11 +53,12 @@ can also manage users in the Django admin portal.
 The project was developed with agile approach. Work was delivered in small increments spread over 4 sprints. The tasks were
 categorized in a total of 7 epics and 26 user stories. Each user story was assigned approximation of story points. Each user story was
 also given one of the 3 labels - must have, should have, could have. User stories were given acceptance criteria and a list of tasks to complete. All user stories were moved following To Do - In Progess - Done methodology. Some of the could have user stories were moved to a Won't Do category, as they were postponed for future deployments. <br>
-User stories were created from a custom GitHub issue template, which had also been created for this project. Completed user stories were closed as issues, while the future ones were left as open issues. Kanban board from Github Project was used and can be viewed [here](https://github.com/users/AgaToma/projects/3/views/1)
+User stories were created from a custom GitHub issue template, which had also been created for this project. Completed user stories were closed as issues, while the future ones were left as open issues. Kanban board from Github Project was used and can be viewed
+[here](https://github.com/users/AgaToma/projects/3/views/1)
 
-![Kanban image](docs/readme_images/kanban.jpg)
+![Kanban image](docs/readme_images/kanban.JPG)
 
-#### Epics & User Stories
+#### Epics & User Stories <hr>
 
 **Epic 1 - Setup** <br>
 User stories:
