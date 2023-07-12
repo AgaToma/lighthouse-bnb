@@ -5,7 +5,7 @@
 Lightouse B&B is a fictional bed and breakfast in County Mayo, Ireland. The site is built
 with Django, consists of home app, users app, rooms app & bookings app. They all combine into a system
 with users, rooms and bookings management capabilities. The live site deployed on Heroku
-can be accessed here [Live Site - Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
+can be accessed here [Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
 
 ![Mock Up](docs/readme_images/mockup.png)
 
@@ -54,7 +54,7 @@ The project was developed with agile approach. Work was delivered in small incre
 categorized in a total of 7 epics and 26 user stories. Each user story was assigned approximation of story points. Each user story was
 also given one of the 3 labels - must have, should have, could have. User stories were given acceptance criteria and a list of tasks to complete. All user stories were moved following To Do - In Progess - Done methodology. Some of the could have user stories were moved to a Won't Do category, as they were postponed for future deployments. <br>
 User stories were created from a custom GitHub issue template, which had also been created for this project. Completed user stories were closed as issues, while the future ones were left as open issues. Kanban board from Github Project was used and can be viewed
-[here](https://github.com/users/AgaToma/projects/3/views/1)
+[here](https://github.com/users/AgaToma/projects/3/views/1).
 
 ![Kanban image](docs/readme_images/kanban.JPG)
 
@@ -104,9 +104,37 @@ User stories:
 
 - Documentation - As a Developer, I can keep detailed documentation, so that I can refer to it in the future or share with others
 
-## The Strategy Plane
+## The Scope Plane
 
-Responsiveness, CRUD, Home page UI for guests, Friendly user UI for admins, security - role based access restrictions
+**Responsiveness**
+Site is functional and maintains full presentabillity on different screen sizes from 320 px up
+
+**CRUD**
+
+- Guest users can create, view, update and delete their own bookings (Boookings App)
+- Staff users can create, view, update and delete all bookings (Boookings App)
+- Staff users can create, view, update and delete rooms (Rooms App)
+- Staff users can create, view, update and delete users - via Django admin interface (Users App)
+
+**Home page and customized user interface for guest users**
+
+- Guest users can view home page with b&b information
+- Guest users can navigate the site via navbar
+- Guest users can perform CRUD in customized user interface (detail pages and forms on the site)
+
+**Customized user interface for admin users**
+
+- Staff users are site admin users
+- Staff users can Guest users can perform CRUD on bookings and rooms in customized user interface (detail pages and forms on the site)
+- Staff users have role based custom navbar with added admin links
+
+**Security - role based restrictions**
+
+- Separation of staff/admin users and guest users capabilities and access
+  - Staff users have more options on their navbar
+  - Staff users have more options on room details page
+  - Staff users can see all bookings
+- Restricting guest user access only to bookings created by them
 
 ## The Structure Plane
 
