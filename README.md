@@ -120,7 +120,8 @@ Site is functional and maintains full presentabillity on different screen sizes 
 
 - Guest users can view home page with b&b information
 - Guest users can navigate the site via navbar
-- Guest users can perform CRUD in customized user interface (detail pages and forms on the site)
+- Navbar is customized depending if user is logged in or not
+- Logged in guest users can perform CRUD in customized user interface (detail pages and forms on the site)
 
 **Customized user interface for admin users**
 
@@ -136,9 +137,60 @@ Site is functional and maintains full presentabillity on different screen sizes 
   - Staff users can see all bookings
 - Restricting guest user access only to bookings created by them
 
+**Backend organized in separate apps**
+
+- Home app
+- Users app
+- Rooms app
+- Bookings app
+
 ## The Structure Plane
 
+### Flow
+
+**Users not registered/logged in - basic access**
+
+- Can view home page and rooms list without option to book
+- Need to register or log in if already registered to access more features
+
+**Logged in guest users - registered guest access**
+
+- Can book rooms after proceeding via links from home page or room details page to New Booking page/form
+- Can view, update, delete self created bookings via My Bookings page -> Booking details
+
+**Staff users - admin access**
+
+- Can create rooms via Create Rooms page/form
+- Can update and delete rooms via Edit Room page/form
+- Can view, update, delete all bookings via My Bookings page -> Booking details
+- Can create view, update, delete custom users via Django admin interface
+
 ### Features
+
+**Navigation**
+![Navbar image](docs/readme_images/navbar.png)
+Site wide responsive Bootrstrap navbar was added for easy navigation between pages. To achieve responsiveness it
+collapses to hamburger on smaller screens. It contains different links depending on whether the user is logged in and
+user role. It also contains a search box for rooms search with custom tooltip containing search instructions.
+Navbar is placed in the header template (main project templates).
+
+**Footer**
+![Home image](docs/readme_images/home.png)
+Footer is visible across all pages on the site. It contains social media links, so that guests can follow the b&b, if they like.
+
+**Home page**
+![Home image](docs/readme_images/home.png)
+The goal of home page is to present the B&B to potential guests and get them interested. It contains hero image, bed and breakfast description with information about rooms, breakfasts, bookings and payments. Bookings and payments section is collapsible to avoid clutter on smaller devices. There is also a Bootstrap carousel with more breakfast details.
+Below description, there is a location information. Home page is part of a home app, shown from index template.
+
+**Sign up form**
+![Form image](docs/readme_images/signup.png)
+
+**Log in form**
+![Form image](docs/readme_images/login.png)
+
+**Log out**
+![Form image](docs/readme_images/logout.png)
 
 ### Future Features
 
