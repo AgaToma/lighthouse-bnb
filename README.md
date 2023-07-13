@@ -44,7 +44,7 @@ can be accessed here [Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
 
 The primary goal of the site is to showcase the B&B and it's unique location to potential guests. Guests
 can view rooms list and rooms details, they are also given some functionality to independently register, log in,
-make and manage their bookings.
+make and manage their bookings, which allows them more flexibility without needing to contact the B&B.
 Staff users can manage all bookings (create, update, delete), as well as rooms (create, update, delete) via the website. They
 can also manage users in the Django admin portal.
 
@@ -107,7 +107,7 @@ User stories:
 ## The Scope Plane
 
 **Responsiveness**
-Site is functional and maintains full presentabillity on different screen sizes from 320 px up
+Site is functional and maintains full presentabillity on different screen sizes from 320 px up.
 
 **CRUD**
 
@@ -136,6 +136,7 @@ Site is functional and maintains full presentabillity on different screen sizes 
   - Staff users have more options on room details page
   - Staff users can see all bookings
 - Restricting guest user access only to bookings created by them
+- Unregistered users have view only access to home page and rooms
 
 **Backend organized in separate apps**
 
@@ -175,24 +176,74 @@ user role. It also contains a search box for rooms search with custom tooltip co
 Navbar is placed in the header template (main project templates).
 
 **Footer**
-![Home image](docs/readme_images/home.png)
+![Home image](docs/readme_images/footer.png)
 Footer is visible across all pages on the site. It contains social media links, so that guests can follow the b&b, if they like.
 
 **Home page**
-![Home image](docs/readme_images/home.png)
 The goal of home page is to present the B&B to potential guests and get them interested. It contains hero image, bed and breakfast description with information about rooms, breakfasts, bookings and payments. Bookings and payments section is collapsible to avoid clutter on smaller devices. There is also a Bootstrap carousel with more breakfast details.
 Below description, there is a location information. Home page is part of a home app, shown from index template.
+![Home image](docs/readme_images/home.png)
 
 **Sign up form**
+Form is provided to allow users to register. Signup template was taken from allauth module and styled to match the site appearance.
 ![Form image](docs/readme_images/signup.png)
 
 **Log in form**
+Form is provided to allow users to log in. Login template was taken from allauth module and styled to match the site appearance.
 ![Form image](docs/readme_images/login.png)
 
 **Log out**
+Logout template was taken from allauth module and styled to match the site appearance. Before logging the user out it confirms, if user wants to log out.
 ![Form image](docs/readme_images/logout.png)
 
+**Create room page**
+![Create room](docs/readme_images/create_room.png)
+Within the Rooms app, Create Room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to add a new room to the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+
+**Edit room page**
+![Create room](docs/readme_images/edit_room.png)
+Within the Rooms app, Edit room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to edit details of an exisiting room in the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+
+**Rooms page**
+![Edit room](docs/readme_images/edit_room.png)
+Within the Rooms app, Edit Room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to edit details of an exisiting room in the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+
+**Rooms page**
+![Rooms](docs/readme_images/rooms.png)
+Rooms page was created to show a list of all available rooms on offer. Bootsrap cards were used to display rooms, showing room names, photos and basic details like capacity and view. It's in the Rooms app and is accessible to all viewers of the website without restrictions.
+
+**Rooms Details**
+![Room Details](docs/readme_images/room_details.png)
+Users are directed to respective Room details page after clicking on one of the room cards on Rooms page. They can see a more detailed room description there, price and room number. This is visible for any viewers, but options vary depending on permissions. If a user is not logged in, they can see instructions how to book the room (log in or call b&B). If they are logged in, they can see "Book Room" button. If they are admin, they can also see "Edit Room" button, which directs to Edit Room page and "Delete Room", which allows to perform delete operation. Before proceeding with the deletion, user is asked to confirm, it they want to delete.
+![Confirm delete](docs/readme_images/confirm_delete.png)
+
+**New booking page**
+![New Booking](docs/readme_images/new_booking.png)
+New booking page and form are a part of Bookings app. Logged in user can access them from Room Details or Home Page. There is validation implemented to ensure the input of required and correct information. No fields can be left empty, if a room with less capacity then entered is selected a descriptive error message is displayed to the user, if user selects earlier check out than check in, a descriptive error message is also displayed. If the selected room is not available during selected dates due to another booking, a message is also displayed informing user of the same.
+
+**Bookings list page**
+![Bookings list](docs/readme_images/bookings_list.png)
+Bookings list page was made within Bookings app, so that logged in users can view their own bookings. Bookings are ordered by check in date. Staff users can see all bookings and can perform search using booking id in this UI. If a search with different parameters is needed, they need to use Django admin interface. Secure access according to designed permissions is ensured via mixins.
+
+**Booking details**
+![Booking list](docs/readme_images/bookings_details.png)
+After clicking on the booking card on Bookings list page, the user can view their booking summary. They also have buttons available to edit the booking, which directs to edit booking form or delete booking, where a confirmation is required before deletion is completed.
+
+**403 and 404 error pages**
+Error pages were created for a friendly way of informing the user that they have no access to view a requested page (403) or that a page they requested doesn't exist (404). Both error pages contain a message and link to redirect the user back to home page.
+
+**Confirmation messages**
+![Pop up](docs/readme_images/pop_up.png)
+Pop up messages were implemented to inform the user about successful sign in, log out and booking.
+
+**Favicon**
+Favicon was added to enable user locating the tab easier when multiple tabs are open.
+
 ### Future Features
+
+- Room availability calendar - to show guests when the room they want to book is available
+- Room rating
+- Room capacity for children
 
 ## The Skeleton Plane
 
