@@ -320,6 +320,12 @@ Wireframes were created with Balsamiq. Click below to expand for details.
 
 ### Database Design
 
+This project uses PostresQL database hosted on [Elephant SQL](https://www.elephantsql.com/). There are three custom models in the database: Custom User, Room and Booking. The models are related via Foreign Key relationships. Relationship type can be viewed on the first diagram which was drawn for the design of the database using [Draw SQL](https://drawsql.app/). The second diagram was generated after completion of the project from the ready database with [DBeaver](https://dbeaver.io/).
+Social accounts, groups and emails models from allauth modules visible in Django admin were not actively used in the current version, but were left for future deployments.
+
+![Initial Schema](docs/readme_images/drawSQL_schema.png)
+![Final Schema](docs/readme_images/DBeaver_schema.png)
+
 ## The Surface Plane
 
 ### Design
