@@ -5,8 +5,7 @@
 {% block content %}
 
 <div class="container room-details p-3 mt-2 w-80 text-center">
-    <a href="{% url 'mybookings' %}" class="float-r"><button type="button" class="btn-close" data-bs-dismiss="alert"
-            aria-label="Close"></button></a>
+    <a href="{% url 'mybookings' %}" class="btn-close float-r"></a>
     <h5 class="card-title p-2"> {{ object.main_guest_name }} will be staying at
         <a href="{% url 'room_details' object.room.id %}">{{ object.room.name }}</a>
     </h5>
