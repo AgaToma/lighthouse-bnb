@@ -248,18 +248,75 @@ Favicon was added to enable user locating the tab easier when multiple tabs are 
 ## The Skeleton Plane
 
 ### Wireframes
+
 Wireframes were created with Balsamiq. Click below to expand for details.
+
 <details>
   <summary>Home page</summary>
 
 ![Home page](docs/wireframes/home_page.png)
-</details>
 
+</details>
 <details>
-  <summary>Sign up</summary>
+  <summary>Sign up page</summary>
 
 ![Sign up](docs/wireframes/sign_up.png)
-</details><br>
+
+</details>
+<details>
+  <summary>Log in page</summary>
+
+![Log in](docs/wireframes/log_in.png)
+
+</details>
+<details>
+  <summary>Log out page</summary>
+
+![Log out](docs/wireframes/log_out.png)
+
+</details>
+<details>
+  <summary>Rooms page</summary>
+
+![Rooms](docs/wireframes/our_rooms.png)
+
+</details>
+<details>
+  <summary>Create room page</summary>
+
+![Create room](docs/wireframes/create_room.png)
+
+</details>
+<details>
+  <summary>Edit room page</summary>
+
+![Edit room](docs/wireframes/edit_room.png)
+
+</details>
+<details>
+  <summary>Room details page</summary>
+
+![Room details](docs/wireframes/room_details.png)
+
+</details>
+<details>
+  <summary>New booking page</summary>
+
+![New booking](docs/wireframes/new_booking.png)
+
+</details>
+<details>
+  <summary>My bookings page</summary>
+
+![My bookings](docs/wireframes/my_bookings.png)
+
+</details>
+<details>
+  <summary>Booking details page</summary>
+
+![Booking details](docs/wireframes/booking_details.png)
+
+</details>
 
 ### Database Design
 
