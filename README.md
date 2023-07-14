@@ -248,6 +248,18 @@ Favicon was added to enable user locating the tab easier when multiple tabs are 
 ## The Skeleton Plane
 
 ### Wireframes
+Wireframes were created with Balsamiq. Click below to expand for details.
+<details>
+  <summary>Home page</summary>
+
+![Home page](docs/wireframes/home_page.png)
+</details>
+
+<details>
+  <summary>Sign up</summary>
+
+![Sign up](docs/wireframes/sign_up.png)
+</details><br>
 
 ### Database Design
 
