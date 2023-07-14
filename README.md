@@ -28,6 +28,7 @@ can be accessed here [Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
     - [Colour Palette](#colour-palette)
     - [Typography](#typography)
     - [Imagery](#imagery)
+- [Technologies](#technologies)
 - [Testing](#testing)
 - [Deployment](#deployment)
   - [Version Control](#version-control)
@@ -330,16 +331,49 @@ Social accounts, groups and emails models from allauth modules visible in Django
 
 ### Design
 
-Pages, cards
+Site is responsive and features multiple pages to avoid clutter. It features Bootstrap navbar and cards to
+enhance balance and responsivity and also Bootstrap carousel for an attractive look.
 
 ### Color palette
 
+Light colors were primarily used, whites and light grays. Light shades of green and blue were used
+for active classes and background effects. Colors were chosed to harmonize with the hero image.
+
 ### Typography
+
+Courgette and Marck Script, both cursive fonts were used to overwrite the default Bootstrap and browser styles for navbar and headings only. Fonts were obtained from Google fonts.
 
 ### Imagery
 
+B&B logo was created on Canva. Hero image and room images were taken from [Pexels](https://www.pexels.com/). All photos were
+selected to match the light color design of the site aligned with sea, sky, cliffs and lighthouse colors of the hero image.
+
+# Technologies
+
 # Testing
+
+Tests description and results are available in a separate [TESTING.md](TESTING.md) file.
 
 # Deployment
 
 # Credits
+
+## References
+
+Below resources were used as reference when creating the project along with Stack Overflow and Code Institute Slack community posts.
+[Django Wednesdays](https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy)
+[Django Recipe Tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&pp=iAQB)
+
+## Images
+
+- 403 & 404 - freefrontend.com
+- breakfast in bed - pexels-lisa-fotios-1843244
+- continental breakfast - pexels-burst-374052
+- irish breakfast - pexels-emrah-tolu-2662875
+- vegan - pexels-pixabay-236795
+- gluten free - pexels-taryn-elliott-4099238
+- hero img - pexels-magic-k-6726764
+
+## Acknowledgments
+
+Big thanks to my Code Institute mentor [Daisy McGirr](https://github.com/Daisy-McG) - for her guidance, support and useful insights.
