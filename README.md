@@ -192,15 +192,15 @@ The goal of home page is to present the B&B to potential guests and get them int
 Below description, there is a location information. Home page is part of a home app, shown from index template.
 ![Home image](docs/readme_images/home.png)
 
-**Sign up form**
+**Sign up form** <br>
 Form is provided to allow users to register. Signup template was taken from allauth module and styled to match the site appearance.
 ![Form image](docs/readme_images/signup.png)
 
-**Log in form**
+**Log in form** <br>
 Form is provided to allow users to log in. Login template was taken from allauth module and styled to match the site appearance.
 ![Form image](docs/readme_images/login.png)
 
-**Log out**
+**Log out** <br>
 Logout template was taken from allauth module and styled to match the site appearance. Before logging the user out it confirms, if user wants to log out.
 ![Form image](docs/readme_images/signout.png)
 
