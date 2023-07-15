@@ -21,9 +21,11 @@ class Room(models.Model):
     """
     A model to create and manage rooms
     """
-    name = models.CharField(max_length=150, null=False, blank=False, unique=True)
+    name = models.CharField(max_length=150, null=False, blank=False,
+                            unique=True)
     room_no = models.IntegerField(null=False, blank=False)
-    view_type = models.CharField(max_length=50, choices=VIEW_TYPES, default='ocean')
+    view_type = models.CharField(max_length=50, choices=VIEW_TYPES,
+                                 default='ocean')
     capacity = models.IntegerField(choices=CAPACITY, default=1)
     price = models.IntegerField(default=80)
     description = RichTextField(max_length=10000, null=False, blank=False)
@@ -36,7 +38,7 @@ class Room(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-   
+
     class Meta:
         ordering = ['-capacity']
 

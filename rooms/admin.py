@@ -14,5 +14,3 @@ class RoomAdmin(admin.ModelAdmin):
     )
     list_filter = ('capacity',)
     search_fields = ('name', 'room_no', 'capacity', 'view_type')
-
-
