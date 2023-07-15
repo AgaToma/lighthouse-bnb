@@ -207,6 +207,7 @@ p a {
     background: linear-gradient(to right, rgba(119, 209, 136, 0.5), rgba(169, 244, 109, 0.5));
 }
 
+/* Media queries */
 @media (max-width: 768px) {
 
     .hero-description,
@@ -220,5 +221,11 @@ p a {
 
     .hero-description p {
         font-size: smaller;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero-description {
+        margin-top: 4%;
     }
 }
