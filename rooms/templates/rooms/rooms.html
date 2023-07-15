@@ -4,6 +4,12 @@
 {% block content %}
 <div class="container">
     <h1 class="text-center">Our rooms</h1>
+    <!-- Create Room button for admins-->
+    {% if user.is_admin %}
+    <div class="container d-flex justify-content-center">
+        <a href="{% url 'add_room' %}" class="btn btn-info m-2 text-center">Create Room</a>
+    </div>
+    {% endif %}
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for room in rooms %}
         <a href="{% url 'room_details' room.id %}" class="m-4 text-center" aria-label="Click to view {{ room.name }}">
