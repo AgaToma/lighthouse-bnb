@@ -5,7 +5,7 @@
 Lightouse B&B is a fictional bed and breakfast in County Mayo, Ireland. The site is built
 with Django, consists of home app, users app, rooms app & bookings app. They all combine into a system
 with users, rooms and bookings management capabilities. The live site deployed on Heroku
-can be accessed here [Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/)
+can be accessed here [Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/).
 
 ![Mock Up](docs/readme_images/mockup.png)
 
@@ -113,7 +113,7 @@ User stories:
 - Visual feedback given to users when needed
 - Page content relevant to purpose with matching descriptive headings
 
-**Responsiveness**
+**Responsiveness** <br>
 Site is functional and maintains full presentabillity on different screen sizes from 320 px up.
 
 **CRUD**
@@ -209,18 +209,14 @@ Logout template was taken from allauth module and styled to match the site appea
 Within the Rooms app, Create Room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to add a new room to the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
 
 **Edit room page**
-![Create room](docs/readme_images/edit_room.png)
-Within the Rooms app, Edit room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to edit details of an exisiting room in the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
-
-**Rooms page**
 ![Edit room](docs/readme_images/edit_room.png)
-Within the Rooms app, Edit Room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to edit details of an exisiting room in the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+Within the Rooms app, Edit room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to edit details of an exisiting room in the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
 
 **Rooms page**
 ![Rooms](docs/readme_images/rooms.png)
 Rooms page was created to show a list of all available rooms on offer. Bootsrap cards were used to display rooms, showing room names, photos and basic details like capacity and view. It's in the Rooms app and is accessible to all viewers of the website without restrictions.
 
-**Rooms Details**
+**Room Details**
 ![Room Details](docs/readme_images/room_details.png)
 Users are directed to respective Room details page after clicking on one of the room cards on Rooms page. They can see a more detailed room description there, price and room number. This is visible for any viewers, but options vary depending on permissions. If a user is not logged in, they can see instructions how to book the room (log in or call b&B). If they are logged in, they can see "Book Room" button. If they are admin, they can also see "Edit Room" button, which directs to Edit Room page and "Delete Room", which allows to perform delete operation. Before proceeding with the deletion, user is asked to confirm, it they want to delete.
 ![Confirm delete](docs/readme_images/confirm_delete.png)
@@ -234,17 +230,17 @@ New booking page and form are a part of Bookings app. Logged in user can access 
 Bookings list page was made within Bookings app, so that logged in users can view their own bookings. Bookings are ordered by check in date. Staff users can see all bookings and can perform search using booking id in this UI. If a search with different parameters is needed, they need to use Django admin interface. Secure access according to designed permissions is ensured via mixins.
 
 **Booking details**
-![Booking list](docs/readme_images/bookings_details.png)
+![Booking details](docs/readme_images/booking_details.png)
 After clicking on the booking card on Bookings list page, the user can view their booking summary. They also have buttons available to edit the booking, which directs to edit booking form or delete booking, where a confirmation is required before deletion is completed.
 
-**403 and 404 error pages**
+**403 and 404 error pages** <br>
 Error pages were created for a friendly way of informing the user that they have no access to view a requested page (403) or that a page they requested doesn't exist (404). Both error pages contain a message and link to redirect the user back to home page.
 
 **Confirmation messages**
 ![Pop up](docs/readme_images/pop_up.png)
 Pop up messages were implemented to inform the user about successful sign in, log out and booking.
 
-**Favicon**
+**Favicon** <br>
 Favicon was added to enable user locating the tab easier when multiple tabs are open.
 
 ### Future Features
