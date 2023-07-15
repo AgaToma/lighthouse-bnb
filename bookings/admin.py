@@ -13,4 +13,5 @@ class BookingAdmin(admin.ModelAdmin):
         'id'
     )
     list_filter = ('check_in',)
-    search_fields = ('id', 'created_by', 'main_guest_name', 'room',)
+    search_fields = ('id', 'created_by__email', 'main_guest_name', 
+                     'room__name')
