@@ -350,6 +350,8 @@ selected to match the light color design of the site aligned with sea, sky, clif
 
 # Technologies
 
+- H
+
 # Testing
 
 Tests description and results are available in a separate [TESTING.md](TESTING.md) file.

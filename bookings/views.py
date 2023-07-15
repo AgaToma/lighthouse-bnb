@@ -22,21 +22,21 @@ class MakeBooking(LoginRequiredMixin, CreateView):
     model = Booking
 
     def form_valid(self, form):
-        
+
         form.instance.created_by = self.request.user
         room = form.cleaned_data['room']
         check_in = form.cleaned_data['check_in']
         check_out = form.cleaned_data['check_out']
-        
+
         # check room availability
         booking_list = Booking.objects.filter(room=room)
         for booking in booking_list:
             if booking.check_in > check_out or booking.check_out < check_in:
-                form.instance.room = room  
+                form.instance.room = room
 
         messages.success(
             self.request,
-            f'You have successfully booked {room}. Thank you for your booking')  
+            f'You have successfully booked {room}. Thank you for your booking')
         return super(MakeBooking, self).form_valid(form)
 
 
@@ -60,7 +60,7 @@ class BookingsList(LoginRequiredMixin, ListView):
                 created_by=self.request.user.email,
                 check_in__gte=date.today() - timedelta(days=15))
             return bookings
-    
+
 
 class BookingDetails(DetailView):
     """View for showing booking details"""
@@ -71,20 +71,20 @@ class BookingDetails(DetailView):
 
 class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
-    View for editing own bookings for guests or all bookings for admins 
+    View for editing own bookings for guests or all bookings for admins
     """
     form_class = BookingEditForm
     template_name = 'bookings/edit_booking.html'
     success_url = '/bookings/'
     model = Booking
-    
+
     def form_valid(self, form):
-        
+
         room = form.cleaned_data['room']
         check_in = form.cleaned_data['check_in']
         check_out = form.cleaned_data['check_out']
         current_booking = form.instance
-        
+
         # check room availability
         booking_list = Booking.objects.filter(room=room)
         new_booking_list = booking_list.exclude(id=current_booking.id)
@@ -94,9 +94,9 @@ class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
         messages.success(
             self.request,
-            'Your booking was successfully changed.')  
+            'Your booking was successfully changed.')
         return super(EditBooking, self).form_valid(form)
-    
+
     def test_func(self):
         if self.request.user.is_admin:
             return True
@@ -118,14 +118,9 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             'Your booking was successfully deleted.'
         )
         return super(DeleteBooking, self).form_valid(form)
-    
+
     def test_func(self):
         if self.request.user.is_admin:
             return True
         else:
             return self.request.user.email
-            
-
-        
-        
-

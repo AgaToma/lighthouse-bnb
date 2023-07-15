@@ -14,7 +14,7 @@ class BookingForm(forms.ModelForm):
         model = Booking
         room = forms.ModelChoiceField(
             queryset=Room.objects.filter(), to_field_name='name')
-        fields = ['room', 'main_guest_name', 'check_in', 'check_out', 
+        fields = ['room', 'main_guest_name', 'check_in', 'check_out',
                   'no_of_ppl', 'breakfast']
         labels = {
             'main_guest_name': 'Main Guest Name',
@@ -23,13 +23,13 @@ class BookingForm(forms.ModelForm):
             'no_of_ppl': 'Number of Guests',
             'breakfast': 'Include Breakfast?'
         }
-    
+
     check_in = forms.DateField(widget=forms.DateInput(attrs={
         'id': 'datePicker', 'class': 'form-control', 'type': 'date'}))
-    
+
     check_out = forms.DateField(widget=forms.DateInput(attrs={
         'id': 'datePicker', 'class': 'form-control', 'type': 'date'}))
-    
+
     def clean(self):
         room = self.cleaned_data['room']
         check_in = self.cleaned_data['check_in']
@@ -72,7 +72,7 @@ class BookingEditForm(forms.ModelForm):
         model = Booking
         room = forms.ModelChoiceField(
             queryset=Room.objects.filter(), to_field_name='name')
-        fields = ['room', 'main_guest_name', 'check_in', 'check_out', 
+        fields = ['room', 'main_guest_name', 'check_in', 'check_out',
                   'no_of_ppl', 'breakfast']
         labels = {
             'main_guest_name': 'Main Guest Name',
@@ -81,19 +81,19 @@ class BookingEditForm(forms.ModelForm):
             'no_of_ppl': 'Number of Guests',
             'breakfast': 'Include Breakfast?'
         }
-    
+
     check_in = forms.DateField(widget=forms.DateInput(attrs={
         'id': 'datePicker', 'class': 'form-control', 'type': 'date'}))
-    
+
     check_out = forms.DateField(widget=forms.DateInput(attrs={
         'id': 'datePicker', 'class': 'form-control', 'type': 'date'}))
-    
+
     def clean(self):
         room = self.cleaned_data['room']
         check_in = self.cleaned_data['check_in']
         check_out = self.cleaned_data['check_out']
         no_of_ppl = self.cleaned_data['no_of_ppl']
-    
+
         # check if there is booking made that will be edited now
         current_booking = None
         try:

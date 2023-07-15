@@ -33,7 +33,7 @@ class Booking(models.Model):
 
     class Meta:
         ordering = ['check_in']
-      
+
     def __str__(self):
         return str(self.pk)
 
@@ -55,8 +55,3 @@ class Booking(models.Model):
     @property
     def is_past_due(self):
         return date.today() > self.check_in
-
-
-    
-
-
