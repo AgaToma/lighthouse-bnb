@@ -128,8 +128,6 @@ header nav {
     }
 }
 
-
-
 .motto-container {
     display: flex;
     justify-content: center;
@@ -156,6 +154,10 @@ header nav {
     width: 40%;
     height: fit-content;
     padding: 1%;
+}
+
+.phone {
+    text-decoration: none;
 }
 
 .carousel-caption {
