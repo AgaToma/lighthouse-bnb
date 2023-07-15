@@ -350,7 +350,26 @@ selected to match the light color design of the site aligned with sea, sky, clif
 
 # Technologies
 
-- H
+- HTML - the structure of the website was developed using HTML
+- CSS - the website was styled using custom CSS in an external file
+- Python - for programming within Django framework
+- [Django](https://www.djangoproject.com/) - framework for building the project using Python as programming language
+- [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - used for adding some predefined elements and styling
+- [Favicon.io](https://favicon.io/) - to make favicon
+- [Google fonts](https://fonts.google.com/) - Courgette and Marck Script fonts were used
+- Chrome Dev Tools - testing/validation/troubleshooting.
+- [CodeAnywhere](https://app.codeanywhere.com/) - website was developed with this IDE in Chrome
+- GitHub - for hosting source code
+- Git - used to commit and push code during the development of the Website
+- [Tinypng](https://tinypng.com/) - was used to reduce the size of the images
+- [Convertio](https://convertio.co/) - for JPG format gallery photos to webp
+- Balsamiq - to create wireframes
+- [Canva](https://www.canva.com/) - to create site logo
+- [Heroku](https://id.heroku.com/login) - to deploy and host live site
+- [Font Awesome](https://fontawesome.com/) - for icons on the site
+- [DrawSQL](https://drawsql.app/) - to create initial DB schema
+- [DBeaver](https://dbeaver.io/) - to create ER diagram after deployment
+- [Cloudinary](https://cloudinary.com/) - for static storage
 
 # Testing
 
