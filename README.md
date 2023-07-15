@@ -107,6 +107,12 @@ User stories:
 
 ## The Scope Plane
 
+**Intuitive UI and relevant content**
+
+- Navigation available throughout the site
+- Visual feedback given to users when needed
+- Page content relevant to purpose with matching descriptive headings
+
 **Responsiveness**
 Site is functional and maintains full presentabillity on different screen sizes from 320 px up.
 
@@ -121,6 +127,7 @@ Site is functional and maintains full presentabillity on different screen sizes 
 
 - Guest users can view home page with b&b information
 - Guest users can navigate the site via navbar
+- Guest users can create accounts with email address and not username
 - Navbar is customized depending if user is logged in or not
 - Logged in guest users can perform CRUD in customized user interface (detail pages and forms on the site)
 
@@ -355,6 +362,7 @@ selected to match the light color design of the site aligned with sea, sky, clif
 - Python - for programming within Django framework
 - [Django](https://www.djangoproject.com/) - framework for building the project using Python as programming language
 - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - used for adding some predefined elements and styling
+- Jinja/Django templating - used to inject dynamic data and queries into HTML pages
 - [Favicon.io](https://favicon.io/) - to make favicon
 - [Google fonts](https://fonts.google.com/) - Courgette and Marck Script fonts were used
 - Chrome Dev Tools - testing/validation/troubleshooting.
@@ -370,6 +378,25 @@ selected to match the light color design of the site aligned with sea, sky, clif
 - [DrawSQL](https://drawsql.app/) - to create initial DB schema
 - [DBeaver](https://dbeaver.io/) - to create ER diagram after deployment
 - [Cloudinary](https://cloudinary.com/) - for static storage
+- [Elephant SQL](https://www.elephantsql.com/) - PostreSQL DB
+
+**Python modules**
+
+- Django class based views - ListView, UpdateView, DeleteView, CreateView
+- Mixins - LoginRequiredMixin, UserPassesTestMixin
+- messages
+- date
+- cloudinary
+- dj-database-url
+- dj3-cloudinary-storage
+- django-allauth
+- gunicorn
+- oauthlib
+- psycopg3
+- djrichtextfield
+- crispy_forms
+- crispy_bootstrap5
+- whitenoise
 
 # Testing
 
