@@ -187,7 +187,7 @@ Navbar is placed in the header template (main project templates).
 ![Home image](docs/readme_images/footer.png)
 Footer is visible across all pages on the site. It contains social media links, so that guests can follow the b&b, if they like.
 
-**Home page**
+**Home page** <br>
 The goal of home page is to present the B&B to potential guests and get them interested. It contains hero image, bed and breakfast description with information about rooms, breakfasts, bookings and payments. Bookings and payments section is collapsible to avoid clutter on smaller devices. There is also a Bootstrap carousel with more breakfast details.
 Below description, there is a location information. Home page is part of a home app, shown from index template.
 ![Home image](docs/readme_images/home.png)
@@ -202,7 +202,7 @@ Form is provided to allow users to log in. Login template was taken from allauth
 
 **Log out**
 Logout template was taken from allauth module and styled to match the site appearance. Before logging the user out it confirms, if user wants to log out.
-![Form image](docs/readme_images/logout.png)
+![Form image](docs/readme_images/signout.png)
 
 **Create room page**
 ![Create room](docs/readme_images/create_room.png)
@@ -404,12 +404,44 @@ Tests description and results are available in a separate [TESTING.md](TESTING.m
 
 # Deployment
 
+## Version Control <br>
+
+The following commands were used for version control.
+
+- git add . - add changes to staging area before committing
+- git commit -m "commit message" - committing staged changes to the local repository
+- git push - pushing commited changes to the GitHub remote repository
+
+## Heroku deployment
+
+Below steps were followed to deploy the project:
+
+- Log in to Heroku
+- Click "New -> Create new app" button
+- Insert app name, choose region, click the "Create App" button
+- On Settings tab go to "Config vars" section, click "Reveal Config Vars"
+- Add the following config vars:
+  - SECRET_KEY: (secret key)
+  - DATABASE_URL: (postresql url)
+  - CLOUNDINARY_URL: (cloudinary api url)
+- On Deploy tab go to "Deployment method" and select Github
+- Go to "App connected to GitHub", type GitHub repository name to link it
+- Manual deployment was chosen on the main branch
+
+## Fork repository
+
+Click Fork button on the top right -> select owner -> optionally change name or add description -> create Fork.
+
+## Clone repository
+
+Click on the code button -> select clone with HTTPS, SSH or GitHub CLI -> copy the link shown -> open terminal in your code editor and change the current working directory to the location you want to use for the cloned directory -> type 'git clone' into the terminal and then paste the copied link -> press enter.
+
 # Credits
 
 ## References
 
-Below resources were used as reference when creating the project along with Stack Overflow and Code Institute Slack community posts.
-[Django Wednesdays](https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy)
+Below resources were used as reference when creating the project along with Stack Overflow and Code Institute Slack community posts.<br>
+[Django Wednesdays](https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy) <br>
 [Django Recipe Tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&pp=iAQB)
 
 ## Images
