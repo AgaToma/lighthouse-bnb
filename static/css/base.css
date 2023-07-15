@@ -98,7 +98,10 @@ header nav {
 .logo {
     border-radius: 5px;
     height: 5vh;
+}
 
+.white {
+    background: white;
 }
 
 /* Landing page */
