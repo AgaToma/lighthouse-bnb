@@ -37,8 +37,10 @@
         <p>Please <a href="{% url 'account_signup' %}">register</a> or <a a href="{% url 'account_login' %}">log
                 in</a>
             to book online.</p>
-        <p>Alternatively, please give us a call at 0871234567 and our staff will make the booking for you.</p>
+        <p>Alternatively, please give us a call at <a href="tel:+353891234567" class="phone"> +353 89 123 4567</a> and
+            our staff will make the booking for you.</p>
         {% endif %}
+        <!--Buttons to change room for admin-->
         {% if user.is_admin %}
         <a href="{% url 'edit_room' room.id %}" class="btn btn-warning m-2">Edit Room</a>
         <a href="{% url 'delete_room' room.id %}" class="btn btn-danger m-2">Delete Room</a>

@@ -23,6 +23,7 @@
                         <a class="nav-link black {% if url_name == 'rooms' %}active{% endif %}"
                             href="{% url 'rooms' %}">Rooms</a>
                     </li>
+                    <!--Booking links-->
                     {% if user.is_authenticated %}
                     <li class="nav-item px-2">
                         <a class="nav-link black {% if url_name == 'new_booking' %}active{% endif %}"
@@ -32,11 +33,13 @@
                         <a class="nav-link black {% if url_name == 'mybookings' %}active{% endif %}"
                             href="{% url 'mybookings' %}">My Bookings</a>
                     </li>
+                    <!--Admin link-->
                     {% if user.is_admin %}
                     <li class="nav-item px-2">
                         <a class="nav-link black" href="https://lighthouse-bnb.herokuapp.com/admin/">Admin</a>
                     </li>
                     {% endif %}
+                    <!--Account links-->
                     <li class="nav-item px-2">
                         <a class="nav-link black {% if url_name == 'account_logout' %}active{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>

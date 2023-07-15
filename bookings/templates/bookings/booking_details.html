@@ -36,6 +36,7 @@
         {{ object.created_by }}
         {% endif %}
     </p>
+    <!--Buttons to change booking-->
     <div class="mt-2">
         <a href="{% url 'edit_booking' object.id %}" class="btn btn-outline-info m-2">Edit Booking</a>
         <a href="{% url 'delete_booking' object.id %}" class="btn btn-outline-danger m-2">Delete Booking</a>
