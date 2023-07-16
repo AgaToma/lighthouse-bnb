@@ -49,6 +49,8 @@ Links from Home page (index.html):
 - Show on map - external google maps link with location
 - Logo link - directs to home page, introduced for SEO, navigation use only secondary
 
+Password reset link (login.html)
+
 Collapsibles on Home page (index.html)
 
 - Payments and bookings - displays relevant content
