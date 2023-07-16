@@ -20,6 +20,8 @@ class MakeBooking(LoginRequiredMixin, CreateView):
     template_name = 'bookings/new_booking.html'
     success_url = '/bookings/'
     model = Booking
+    redirect_unauthenticated_users = True
+    login_url = '/accounts/login/'
 
     def form_valid(self, form):
 
@@ -38,6 +40,8 @@ class MakeBooking(LoginRequiredMixin, CreateView):
             self.request,
             f'You have successfully booked {room}. Thank you for your booking')
         return super(MakeBooking, self).form_valid(form)
+
+    
 
 
 class BookingsList(LoginRequiredMixin, ListView):

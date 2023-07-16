@@ -14,7 +14,7 @@ class TestViews(TestCase):
         password = "test123456"
         user_model = get_user_model()
         self.user = user_model.objects.create_user(
-            email=email, password=password
+            email=email, password=password, is_superuser=True
         )
         logged_in = self.client.login(email=email, password=password)
         self.assertTrue(logged_in)
@@ -35,9 +35,14 @@ class TestViews(TestCase):
         response = self.client.get('/bookings/newbooking/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bookings/new_booking.html')
+
+    def test_bookings_list(self):
+        """Test if bookings are rendering"""
+        response = self.client.get('/bookings/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'bookings/mybookings.html')
     
-    # test booking details
-    # test edit booking
+    
     # test delete booking
     # test unauthorized crud
     # test admin edit/delete all
