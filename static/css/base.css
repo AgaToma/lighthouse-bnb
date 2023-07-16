@@ -49,12 +49,6 @@ header nav {
     color: black;
 }
 
-
-.active {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-}
-
 .nav-link.active {
     text-decoration: underline;
     text-decoration-thickness: 1px;
