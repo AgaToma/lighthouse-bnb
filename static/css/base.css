@@ -35,6 +35,9 @@ a:hover {
 
 #msg {
     margin-top: 10vh;
+    margin-left: 5%;
+    position: absolute;
+    z-index: 9;
 }
 
 .form,
