@@ -41,8 +41,6 @@ class MakeBooking(LoginRequiredMixin, CreateView):
             f'You have successfully booked {room}. Thank you for your booking')
         return super(MakeBooking, self).form_valid(form)
 
-    
-
 
 class BookingsList(LoginRequiredMixin, ListView):
     """View for showing bookings for authenticated user"""
@@ -66,11 +64,15 @@ class BookingsList(LoginRequiredMixin, ListView):
             return bookings
 
 
-class BookingDetails(DetailView):
+class BookingDetails(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     """View for showing booking details"""
     template_name = 'bookings/booking_details.html'
     model = Booking
     context_object_name = 'booking_details'
+
+    def test_func(self):
+        if self.request.user.email:
+            return True
 
 
 class EditBooking(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
