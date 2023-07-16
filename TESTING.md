@@ -65,8 +65,16 @@ Anchors - buttons:
   - Delete Room - delete_room.html
 
 - Booking details:
+
   - Edit Booking - edit_booking.html
   - Delete Booking - delete_booking.html
+
+- Edit Room:
+
+  - Cancel - rooms.html
+
+- Edit Booking:
+  - Cancel - mybookings.html
 
 **Expected result**
 Correct pages and/or content display from all links
@@ -115,6 +123,7 @@ Pass
 
 <hr>
 Test 1:
+
 **Steps to test**
 
 Enter email address -> Enter password -> Click Sign in
@@ -181,6 +190,8 @@ As Expected
 **Assessment**
 Pass
 
+<hr>
+
 #### Edit Room
 
 Test 1:
@@ -196,6 +207,14 @@ Remove price value -> click Submit
 
 **Expected result**
 Form doesn't submit, a message shows to fill out the price field
+
+<hr>
+
+**Actual Results**
+As Expected - As a result of testing edit forms, a need for Cancel button was identified to increase edit forms user friendliness.
+
+**Assessment**
+Pass
 
 ## Booking logic
 
