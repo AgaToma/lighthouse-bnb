@@ -47,6 +47,11 @@ class BookingForm(forms.ModelForm):
             raise ValidationError(
                         'Check_in date needs to be before check_out date')
 
+        # validate check in is not in the past
+        if date.today() > check_in:
+            raise ValidationError(
+                        'Check_in date cannot be in the past')
+
         # get all room bookings and check for availability
         bookings_list = Booking.objects.filter(room=room)
         availability = []
