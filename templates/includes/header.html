@@ -34,7 +34,7 @@
                             href="{% url 'mybookings' %}">My Bookings</a>
                     </li>
                     <!--Admin link-->
-                    {% if user.is_admin %}
+                    {% if user.is_superuser %}
                     <li class="nav-item px-2">
                         <a class="nav-link black" href="https://lighthouse-bnb.herokuapp.com/admin/">Admin</a>
                     </li>
