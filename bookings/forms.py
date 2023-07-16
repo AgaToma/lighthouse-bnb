@@ -104,7 +104,7 @@ class BookingEditForm(forms.ModelForm):
         # check if selected room has correct capacity
         if room not in Room.objects.filter(capacity__gte=no_of_ppl):
             raise ValidationError(_(
-                        'Your selected room is too small for' +
+                        'Your selected room is too small for ' +
                         '%s people. Please choose a bigger room') % no_of_ppl)
 
         # validate check in date is before checkout

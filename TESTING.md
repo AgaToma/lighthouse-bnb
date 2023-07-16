@@ -1,4 +1,6 @@
-[Back to Readme](README.md)
+Back to [Readme](README.md)
+
+The site has been thoroughly tested during development, however this document describes tests performed upon completion.
 
 # Table of Contents
 
@@ -6,6 +8,7 @@
   - [Links & anchors](#links-anchors)
   - [Forms](#forms)
   - [Booking logic](#booking-logic)
+  - [Search and ordering](#search-ordering)
   - [Responsiveness](#responsiveness)
 - [Validator Testing](#validator-testing)
   - [HTML](#html)
@@ -15,6 +18,7 @@
 - [Responsiveness](#responsiveness)
 - [Lighthouse Report](#lighthouse-report)
 - [Unit Tests](#unit-tests)
+- [Bugs](#bugs)
 
 # Functional Testing
 
@@ -90,14 +94,13 @@ Pass
 
 ## Forms
 
-**Description**
+**Description:**
 Test all forms on the site to ensure they function as designed.
 
 ### Authentication (Users)
 
 #### Sign up
 
-<hr>
 Test 1:
 **Steps to test**
 
@@ -122,9 +125,10 @@ As Expected
 **Assessment**
 Pass
 
+<hr>
+
 #### Log in
 
-<hr>
 Test 1:
 
 **Steps to test**
@@ -150,6 +154,8 @@ As Expected
 **Assessment**
 Pass
 
+<hr>
+
 #### Log out
 
 **Steps to test**
@@ -165,9 +171,12 @@ As Expected
 **Assessment**
 Pass
 
+<hr>
+
+### Rooms
+
 #### Create Room
 
-<hr>
 Test 1:
 
 **Steps to test**
@@ -221,24 +230,80 @@ Pass
 
 <hr>
 
+### Bookings
+
 #### New Booking
 
-<hr>
 Test 1:
-
 **Steps to test**
 
 Select room name from dropdown -> Enter main guest name -> Select check in and check out dates from calendar widgets - > Select number of guests from dropdown -> click submit booking -> open booking details by clicking on booking card
 
 **Expected result**
-Fields display on form as designed, form submits, success message displays to user, booking is created with all fields displayed as selected on the form and can be seen on My Bookings page
+Fields display on form as designed, calendar widget works, form submits, success message displays to user, booking is created with all fields displayed as selected on the form and can be seen on My Bookings page
 
 Test 2:
 **Steps to test**
-Fill out all fields on the form, but omit number of people
+Fill out all fields on the form, but omit main guest name
 
 **Expected result**
-Form doesn't submit and scrolls to the field that needs to be filled out, if photo or photo alt field a message shows to fill them out
+Form doesn't submit, a message shows to fill out main guest name
+
+<hr>
+
+**Actual Results**
+As Expected - only basic form functionality was tested in this step, booking submit logic is tested separately at [Booking Logic](#booking-logic)
+
+**Assessment**
+Pass
+
+<hr>
+
+#### Edit Booking
+
+Test 1:
+**Steps to test**
+
+Change main guest name -> Select different check out date on widget -> click submit -> open booking details by clicking on booking card
+
+**Expected result**
+Form submits, success message displays to user, booking is updated with changes done on relevant fields and can be seen as such on My Bookings page
+
+Test 2:
+**Steps to test**
+Leave main guest name empty
+
+**Expected result**
+Form doesn't submit, a message shows to fill out main guest name
+
+<hr>
+
+**Actual Results**
+As Expected - only basic form functionality was tested in this step, booking submit logic is tested separately at [Booking Logic](#booking-logic)
+
+**Assessment**
+Pass
+
+## Booking logic - negative testing
+
+**Description**
+Test that bookings are submitted according to the designed logic via New Booking and Edit Booking forms via negative testing.
+
+### Check in is earlier than check out
+
+Test 1: **Steps to test**
+
+Enter check out date that's earlier than check in date
+
+**Expected result**
+Form doesn't submit, a message shows that check in needs to be before check out
+
+Test 2: **Steps to test**
+
+Enter check out date on the same date as check in date
+
+**Expected result**
+Form doesn't submit, a message shows that check in needs to be before check out
 
 <hr>
 
@@ -248,13 +313,123 @@ As Expected
 **Assessment**
 Pass
 
-<hr>
+### Number of guests is not larger than room capacity
 
-## Booking logic
+**Steps to test**
+
+Select room Swing Hideaway under room name (sleeps 1) -> select 2 people on the booking -> click Submit Booking
+
+**Expected result**
+Form doesn't submit, a message shows that the room is too small for 2 people and to choose a bigger room.
+
+**Actual Results**
+As Expected (Error message was missing a space between words - this has been corrected)
+
+**Assessment**
+Pass
+
+### No duplicate bookings allowed for the same room
+
+**Steps to test**
+
+Select room Lighthouse Suite from the dropdown -> select check in between check in and check out of an already made booking -> click Submit Booking
+
+**Expected result**
+Form doesn't submit, a message shows that the room is not available on the selected dates.
+
+**Actual Results**
+As Expected
+
+**Assessment**
+Pass
+
+### Booking price calculated correctly
+
+**Steps to test**
+
+Check if on a submitted booking the price equals room price \* number of nights
+
+**Expected result**
+Calculation correct
+
+**Actual Results**
+As Expected
+
+**Assessment**
+Pass
+
+## Search and ordering
+
+### Room search (navbar)
+
+**Steps to test**
+
+Enter number 2 in the search box -> click Search
+
+**Expected result**
+Rooms page renders showing only rooms that sleep 2 people (currently Ocean Retreat and Sea Breeze)
+
+**Actual Results**
+As Expected
+
+**Assessment**
+Pass
+
+### Booking search by id (My Bookings with admin access)
+
+**Steps to test**
+
+Enter number 47 in the search box -> click Search
+
+**Expected result**
+Booking with id 47 renders
+
+**Actual Results**
+As Expected
+
+**Assessment**
+Pass
+
+### Room and booking orderding on page
+
+**Steps to test**
+
+Check on rooms and bookings pages, if they are ordered as designed:
+
+- Rooms by capacity
+- Bookings by check in date
+
+**Expected result**
+Ordered as designed
+
+**Actual Results**
+As Expected
+
+**Assessment**
+Pass
 
 ## Admin
 
+Testing of admin was also performed to ensure the functionality of the below:
+
+- User management in USERS - Custom Users:
+  - Displays user emails and admin status
+  - Filtering works according to display fields
+  - Details showing (email, hashed password, permissions, advanced - is active, date joined)
+- Booking management via BOOKINGS - Bookings:
+  - Displays fields as described in admin.py
+  - Filters by check in date
+  - Searches works by main guest name, room name and created by email, id
+
+As a result of initial testing it was discovered that Bookings search was not working. This was solved by adding **email to created_by and **name to room.
+
 ## Responsiveness
+
+Site was checked for responsiveness on different sizes inspected via Chrome Developer tools. Designed layout behaviour was ensured by adding some media queries, where tests shown that elements were overlapping or too cluttered.
+To check responsiveness on diffrent devices site was checked:
+
+- in browsers: Edge and Safari.
+- on devices: Samsung Galaxy S8+, iPhone XR, Lenovo Tab M10, Dell Inspiron 14, Dell external widescreen monitor
 
 # Validator Testing
 
@@ -270,6 +445,8 @@ There are errors showing on forms pages (Create Room and New Booking) related to
 ![HTML form error](docs/readme_images/html_validator_form_error.png)
 
 ## CSS
+
+![CSS validation](docs/readme_images/css_validator.png)
 
 ## Python
 
