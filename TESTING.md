@@ -187,7 +187,7 @@ Enter room name & number -> Select view from dropdown -> Enter number of people,
 **Expected result:**
 Fields display on form as designed, form submits, room is created with all fields displayed as selected on the form
 
-Test 2:
+Test 2 <br>
 **Steps to test:**
 Fill out all fields on the form, but omit number of people
 
@@ -206,14 +206,14 @@ Pass
 
 #### Edit Room
 
-Test 1:
+Test 1 <br>
 **Steps to test:**
 Edit price -> click Submit
 
 **Expected result:**
 Form submits, price field is displayed with the new value
 
-Test 2:
+Test 2 <br>
 **Steps to test:**
 Remove price value -> click Submit
 
