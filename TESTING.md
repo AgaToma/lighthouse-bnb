@@ -440,7 +440,7 @@ There are errors showing on forms pages (Create Room and New Booking) related to
 
 Custom CSS code rendered no errors in the [Jigsaw Validator](https://jigsaw.w3.org/css-validator/).
 
-![CSS validation](docs/readme_images/css_validator.png)
+![CSS validation](docs/readme_images/css_validation.png)
 
 ## Python
 
