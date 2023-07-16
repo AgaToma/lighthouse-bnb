@@ -483,3 +483,5 @@ To improve SEO score, link was added to the site logo thanks to another suggesti
 
 - bookings search functionality - this has not been working as designed both in site interface (Admin Bookings page) and admin. It was only partly solved by applying more details to search fields in admin.py (**email, **name) and it fixed the issue in admin. The original logic written for Admin Bookings page using Q and icontain (same as the working logic for room search) was not working for bookings. After applying more details to search fields, which worked for admin interface, instead of showing "icontain" errors, the search was returning empty results. Alternative logic was then implemented only to search bookings by id on Admin Bookings page.
 - initial or default value for room name on booking form - it was my intent that the room name dropdown on the booking form displays as initial/default value the name of the room from which the user got redirected. I have not found a way to set it up without using JavaScript, which primarily has not beed used for this project.
+
+Back to [Readme](README.md)

@@ -379,21 +379,23 @@ selected to match the light color design of the site aligned with sea, sky, clif
 
 **Python modules**
 
-- Django class based views - ListView, UpdateView, DeleteView, CreateView
-- Mixins - LoginRequiredMixin, UserPassesTestMixin
-- messages
-- date
-- cloudinary
-- dj-database-url
-- dj3-cloudinary-storage
-- django-allauth
-- gunicorn
-- oauthlib
-- psycopg3
-- djrichtextfield
-- crispy_forms
-- crispy_bootstrap5
-- whitenoise
+- Django==3.2.19
+- Django class based views - ListView, UpdateView, DeleteView, CreateView - for classes to create, edit, delete and display
+- Mixins - LoginRequiredMixin, UserPassesTestMixin - for permissions based restrictions
+- Q - for search queries
+- messages - for showing user feedback
+- date, datetime - for date usage and operations
+- cloudinary==1.32.0 - static file/image storage
+- dj-database-url==0.5.0 - o parse database url for production environment
+- dj3-cloudinary-storage==0.0.6 - storage system to work with cloudinary
+- django-allauth==0.54.0 - for authentication
+- gunicorn==20.1.0 - WSGI server
+- oauthlib==3.2.2 - installed as dependency with another packag
+- psycopg2==2.9.6 - for Heroku deployment
+- django-richtextfield==1.6.1 - for using custom styling on form fields
+- django-crispy-forms==2.0 - for serving forms
+- crispy-bootstrap5==0.7 - allow bootstrap5 use with crispy forms
+- whitenoise - to solve issue with static file loading after deployment to Heroku
 
 # Testing
 
