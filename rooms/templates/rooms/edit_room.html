@@ -13,7 +13,8 @@
         {{ form.media }}
         {{ form|crispy }}
         <div class="text-center">
-            <button class="btn btn-outline-success" type="submit">Submit</button>
+            <button class="btn btn-outline-success m-2" type="submit">Submit</button>
+            <a href="{% url 'rooms' %}" class="btn btn-outline-primary">Cancel</a>
         </div>
     </form>
 </div>
