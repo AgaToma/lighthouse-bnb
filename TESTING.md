@@ -3,7 +3,10 @@
 # Table of Contents
 
 - [Functional Testing](#functional-testing)
-  - [Negative Testing](#negative-testing)
+  - [Links & anchors](#links-anchors)
+  - [Forms](#forms)
+  - [Booking logic](#booking-logic)
+  - [Responsiveness](#responsiveness)
 - [Validator Testing](#validator-testing)
   - [HTML](#html)
   - [CSS](#css)
@@ -173,7 +176,7 @@ Enter room name & number -> Select view from dropdown -> Enter number of people,
 -> click submit
 
 **Expected result**
-Form submits, room is created with all fields displayed as selected on the form
+Fields display on form as designed, form submits, room is created with all fields displayed as selected on the form
 
 Test 2:
 **Steps to test**
@@ -215,6 +218,37 @@ As Expected - As a result of testing edit forms, a need for Cancel button was id
 
 **Assessment**
 Pass
+
+<hr>
+
+#### New Booking
+
+<hr>
+Test 1:
+
+**Steps to test**
+
+Select room name from dropdown -> Enter main guest name -> Select check in and check out dates from calendar widgets - > Select number of guests from dropdown -> click submit booking -> open booking details by clicking on booking card
+
+**Expected result**
+Fields display on form as designed, form submits, success message displays to user, booking is created with all fields displayed as selected on the form and can be seen on My Bookings page
+
+Test 2:
+**Steps to test**
+Fill out all fields on the form, but omit number of people
+
+**Expected result**
+Form doesn't submit and scrolls to the field that needs to be filled out, if photo or photo alt field a message shows to fill them out
+
+<hr>
+
+**Actual Results**
+As Expected
+
+**Assessment**
+Pass
+
+<hr>
 
 ## Booking logic
 
