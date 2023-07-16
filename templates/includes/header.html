@@ -4,7 +4,7 @@
     {% with request.resolver_match.url_name as url_name %}
     <nav class="navbar navbar-expand-lg fs-4 fixed-top mb-2 bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/logo.png' %}" alt="lighthouse bnb logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
