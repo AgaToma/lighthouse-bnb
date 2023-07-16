@@ -7,7 +7,7 @@ The site has been thoroughly tested during development, however this document de
 - [Functional Testing](#functional-testing)
   - [Links & anchors](#links-anchors)
   - [Forms](#forms)
-  - [Booking logic - negative testing](#booking-logic)
+  - [Booking logic](#booking-logic)
   - [Search and ordering](#search-ordering)
   - [Admin](#admin)
 - [Validator Testing](#validator-testing)
@@ -356,6 +356,21 @@ Calculation correct
 
 **Actual Results:**
 As Expected
+
+**Assessment:**
+Pass
+
+### Check in date cannot be in the past
+
+**Steps to test:**
+
+Select check in date in the past
+
+**Expected result:**
+Form doesn't submit, a message shows that check in cannot be in the past
+
+**Actual Results:**
+Initially this didn't work, so logic was added to the form to prevent occurence. Testing after this update produced desired result.
 
 **Assessment:**
 Pass
