@@ -30,6 +30,19 @@ class TestViews(TestCase):
             image_alt='test room img'
         )
 
+        # create test booking
+        booking = Booking.objects.create(
+            created_by=self.user,
+            main_guest_name='Test',
+            room=self.room,
+            check_in='2023-08-26',
+            check_out='2023-08-27',
+            no_of_ppl=2,
+            breakfast=True,
+            created_on=date.today()
+
+        )
+
     def test_booking_page(self):
         """Test if correct page and template renders"""
         response = self.client.get('/bookings/newbooking/')
@@ -46,7 +59,10 @@ class TestViews(TestCase):
         """Test if booking page redirects unauthorized user"""
         self.client.logout()
         response = self.client.get('/bookings/newbooking/')
-        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response.status_code, 302)
+
+    
+
     
     
     

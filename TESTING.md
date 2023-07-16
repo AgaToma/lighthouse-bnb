@@ -492,7 +492,11 @@ To improve SEO score, link was added to the site logo thanks to another suggesti
 
 ![Lighthouse](docs/readme_images/lighthouse.png)
 
-# Unit Tests
+# Automatic tests
+
+A limited attempt was also made to produce automatic tests. 3 tests were created for the bookings app and successfully ran.
+
+![Lighthouse](docs/readme_images/autotests.png)
 
 # Bugs
 
