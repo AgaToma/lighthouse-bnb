@@ -46,8 +46,7 @@ can be accessed here [Lighthouse BnB](https://lighthouse-bnb.herokuapp.com/).
 The primary goal of the site is to showcase the B&B and it's unique location to potential guests. Guests
 can view rooms list and rooms details, they are also given some functionality to independently register, log in,
 make and manage their bookings, which allows them more flexibility without needing to contact the B&B.
-Staff users can manage all bookings (create, update, delete), as well as rooms (create, update, delete) via the website. They
-can also manage users in the Django admin portal.
+Staff admin users can manage all bookings (create, update, delete), as well as rooms (create, update, delete) via the website. Staff superusers can also manage users in the Django admin portal.
 
 ### Agile Planning
 
@@ -73,7 +72,7 @@ User stories:
 - Guest registration - As a Guest, I can register only with my email and password, so that I can make a booking
 - Registered guests are able to login and logout - As a User, I can login and logout, so that I can see my booking
 - Consistency of account pages with website design - As a User, I can experience visual consistency across the website, so that there's no confusion
-- Admin user - As a staff user, I can access the admin functionalities of the system, so that I can assist guests
+- Staff user - As a staff superuser, I can access the admin functionalities of the system, so that I can assist guests
 
 **Epic 3 - Rooms app** <br>
 
@@ -121,7 +120,7 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - Guest users can create, view, update and delete their own bookings (Boookings App)
 - Staff users can create, view, update and delete all bookings (Boookings App)
 - Staff users can create, view, update and delete rooms (Rooms App)
-- Staff users can create, view, update and delete users - via Django admin interface (Users App)
+- Staff superusers can create, view, update and delete users - via Django admin interface (Users App)
 
 **Home page and customized user interface for guest users**
 
@@ -131,11 +130,11 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - Navbar is customized depending if user is logged in or not
 - Logged in guest users can perform CRUD in customized user interface (detail pages and forms on the site)
 
-**Customized user interface for admin users**
+**Customized user interface for admin and super users**
 
 - Staff users are site admin users
 - Staff users can Guest users can perform CRUD on bookings and rooms in customized user interface (detail pages and forms on the site)
-- Staff users have role based custom navbar with added admin links
+- Staff superusers have role based custom navbar with added admin links
 
 **Security - role based restrictions**
 
@@ -172,6 +171,10 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - Can create rooms via Create Rooms page/form
 - Can update and delete rooms via Edit Room page/form
 - Can view, update, delete all bookings via My Bookings page -> Booking details
+
+**Staff users - superuser access**
+
+- Can perform a more detailed booking search in Django admin interface
 - Can create view, update, delete custom users via Django admin interface
 
 ### Features
@@ -206,7 +209,7 @@ Logout template was taken from allauth module and styled to match the site appea
 
 **Create room page**
 ![Create room](docs/readme_images/create_room.png)
-Within the Rooms app, Create Room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to add a new room to the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+Within the Rooms app, Create Room page with form was made to provide a friendly UI to staff admin users without them having to use Django admin, when they need to add a new room to the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
 
 **Edit room page**
 ![Edit room](docs/readme_images/edit_room.png)
@@ -248,6 +251,7 @@ Favicon was added to enable user locating the tab easier when multiple tabs are 
 - Room availability calendar - to show guests when the room they want to book is available
 - Room rating
 - Room capacity for children
+- Further enhancement of Users app & authentication, using already prepared features like full name
 
 ## The Skeleton Plane
 
