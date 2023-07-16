@@ -41,9 +41,12 @@ class TestViews(TestCase):
         response = self.client.get('/bookings/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bookings/mybookings.html')
+
+    def test_booking_page_redirects(self):
+        """Test if booking page redirects unauthorized user"""
+        self.client.logout()
+        response = self.client.get('/bookings/newbooking/')
+        self.assertEqual(response.status_code, 301)
     
     
-    # test delete booking
-    # test unauthorized crud
-    # test admin edit/delete all
-    # test redirecting if not logged in
+    
