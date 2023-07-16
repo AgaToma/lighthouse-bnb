@@ -24,10 +24,10 @@ The site has been thoroughly tested during development, however this document de
 
 ## Links & anchors
 
-**Description**
+**Description:**
 Test all links on the site to ensure they direct to correct pages.
 
-**Steps to test**
+**Steps to test:**
 
 Click all listed links and anchors -> Check if the correct page displays
 
@@ -83,13 +83,13 @@ Anchors - buttons:
 - Edit Booking:
   - Cancel - mybookings.html
 
-**Expected result**
+**Expected result:**
 Correct pages and/or content display from all links
 
-**Actual Result**
+**Actual Result:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 ## Forms
@@ -101,74 +101,74 @@ Test all forms on the site to ensure they function as designed.
 
 #### Sign up
 
-Test 1:
-**Steps to test**
+Test 1<br>
+**Steps to test:**
 
 Enter email address -> Enter password -> Repeat same password -> Click submit
 
-**Expected result**
+**Expected result:**
 Form submits, new user is created, success message is displayed to user, new user is showing in admin
 
-Test 2:
-**Steps to test**
+Test 2<br>
+**Steps to test:**
 
 Enter email address -> Enter password -> Enter different password -> Click submit
 
-**Expected result**
+**Expected result:**
 Form doesn't sumbit, password doesn't match error message is displayed to user
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 <hr>
 
 #### Log in
 
-Test 1:
+Test 1 <br>
 
-**Steps to test**
+**Steps to test:**
 
 Enter email address -> Enter password -> Click Sign in
 
-**Expected result**
+**Expected result:**
 Form submits, user is logged in, success message is displayed to user
 
-Test 2:
-**Steps to test**
+Test 2 <br>
+**Steps to test:**
 
 Enter email address -> Enter wrong password -> Click Sign in
 
-**Expected result**
+**Expected result:**
 Form doesn't sumbit, password doesn't match error message is displayed to user
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 <hr>
 
 #### Log out
 
-**Steps to test**
+**Steps to test:**
 
 Click Sign out button on navbar -> Click Signout on confirmation
 
-**Expected result**
+**Expected result:**
 User gets logged out
 
-**Actual Result**
+**Actual Result:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 <hr>
@@ -177,29 +177,29 @@ Pass
 
 #### Create Room
 
-Test 1:
+Test 1 <br>
 
-**Steps to test**
+**Steps to test:**
 
 Enter room name & number -> Select view from dropdown -> Enter number of people, price, description - > Select photo -> enter alt
 -> click submit
 
-**Expected result**
+**Expected result:**
 Fields display on form as designed, form submits, room is created with all fields displayed as selected on the form
 
 Test 2:
-**Steps to test**
+**Steps to test:**
 Fill out all fields on the form, but omit number of people
 
-**Expected result**
+**Expected result:**
 Form doesn't submit and scrolls to the field that needs to be filled out, if photo or photo alt field a message shows to fill them out
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 <hr>
@@ -207,25 +207,25 @@ Pass
 #### Edit Room
 
 Test 1:
-**Steps to test**
+**Steps to test:**
 Edit price -> click Submit
 
-**Expected result**
+**Expected result:**
 Form submits, price field is displayed with the new value
 
 Test 2:
-**Steps to test**
+**Steps to test:**
 Remove price value -> click Submit
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows to fill out the price field
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected - As a result of testing edit forms, a need for Cancel button was identified to increase edit forms user friendliness.
 
-**Assessment**
+**Assessment:**
 Pass
 
 <hr>
@@ -234,157 +234,159 @@ Pass
 
 #### New Booking
 
-Test 1:
-**Steps to test**
+Test 1 <br>
+**Steps to test:**
 
 Select room name from dropdown -> Enter main guest name -> Select check in and check out dates from calendar widgets - > Select number of guests from dropdown -> click submit booking -> open booking details by clicking on booking card
 
-**Expected result**
+**Expected result:**
 Fields display on form as designed, calendar widget works, form submits, success message displays to user, booking is created with all fields displayed as selected on the form and can be seen on My Bookings page
 
-Test 2:
-**Steps to test**
+Test 2 <br>
+**Steps to test:**
 Fill out all fields on the form, but omit main guest name
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows to fill out main guest name
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected - only basic form functionality was tested in this step, booking submit logic is tested separately at [Booking Logic](#booking-logic)
 
-**Assessment**
+**Assessment:**
 Pass
 
 <hr>
 
 #### Edit Booking
 
-Test 1:
-**Steps to test**
+Test 1 <br>
+**Steps to test:**
 
 Change main guest name -> Select different check out date on widget -> click submit -> open booking details by clicking on booking card
 
-**Expected result**
+**Expected result:**
 Form submits, success message displays to user, booking is updated with changes done on relevant fields and can be seen as such on My Bookings page
 
-Test 2:
-**Steps to test**
+Test 2 <br>
+**Steps to test:**
 Leave main guest name empty
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows to fill out main guest name
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected - only basic form functionality was tested in this step, booking submit logic is tested separately at [Booking Logic](#booking-logic)
 
-**Assessment**
+**Assessment:**
 Pass
 
 ## Booking logic - negative testing
 
-**Description**
+**Description:**
 Test that bookings are submitted according to the designed logic via New Booking and Edit Booking forms via negative testing.
 
 ### Check in is earlier than check out
 
-Test 1: **Steps to test**
+Test 1 <br>
+**Steps to test:**
 
 Enter check out date that's earlier than check in date
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows that check in needs to be before check out
 
-Test 2: **Steps to test**
+Test 2 <br>
+**Steps to test:**
 
 Enter check out date on the same date as check in date
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows that check in needs to be before check out
 
 <hr>
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 ### Number of guests is not larger than room capacity
 
-**Steps to test**
+**Steps to test:**
 
 Select room Swing Hideaway under room name (sleeps 1) -> select 2 people on the booking -> click Submit Booking
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows that the room is too small for 2 people and to choose a bigger room.
 
-**Actual Results**
+**Actual Results:**
 As Expected (Error message was missing a space between words - this has been corrected)
 
-**Assessment**
+**Assessment:**
 Pass
 
 ### No duplicate bookings allowed for the same room
 
-**Steps to test**
+**Steps to test:**
 
 Select room Lighthouse Suite from the dropdown -> select check in between check in and check out of an already made booking -> click Submit Booking
 
-**Expected result**
+**Expected result:**
 Form doesn't submit, a message shows that the room is not available on the selected dates.
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 ### Booking price calculated correctly
 
-**Steps to test**
+**Steps to test:**
 
 Check if on a submitted booking the price equals room price \* number of nights
 
-**Expected result**
+**Expected result:**
 Calculation correct
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 ## Search and ordering
 
 ### Room search (navbar)
 
-**Steps to test**
+**Steps to test:**
 
 Enter number 2 in the search box -> click Search
 
-**Expected result**
+**Expected result:**
 Rooms page renders showing only rooms that sleep 2 people (currently Ocean Retreat and Sea Breeze)
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 ### Booking search by id (My Bookings with admin access)
 
-**Steps to test**
+**Steps to test:**
 
 Enter number 47 in the search box -> click Search
 
-**Expected result**
+**Expected result:**
 Booking with id 47 renders
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
 **Assessment**
@@ -392,20 +394,20 @@ Pass
 
 ### Room and booking orderding on page
 
-**Steps to test**
+**Steps to test:**
 
 Check on rooms and bookings pages, if they are ordered as designed:
 
 - Rooms by capacity
 - Bookings by check in date
 
-**Expected result**
+**Expected result:**
 Ordered as designed
 
-**Actual Results**
+**Actual Results:**
 As Expected
 
-**Assessment**
+**Assessment:**
 Pass
 
 ## Admin
@@ -476,3 +478,8 @@ To improve SEO score, link was added to the site logo thanks to another suggesti
 ![Lighthouse](docs/readme_images/lighthouse.png)
 
 # Unit Tests
+
+# Bugs
+
+- bookings search functionality - this has not been working as designed both in site interface (Admin Bookings page) and admin. It was only partly solved by applying more details to search fields in admin.py (**email, **name) and it fixed the issue in admin. The original logic written for Admin Bookings page using Q and icontain (same as the working logic for room search) was not working for bookings. After applying more details to search fields, which worked for admin interface, instead of showing "icontain" errors, the search was returning empty results. Alternative logic was then implemented only to search bookings by id on Admin Bookings page.
+- initial or default value for room name on booking form - it was my intent that the room name dropdown on the booking form displays as initial/default value the name of the room from which the user got redirected. I have not found a way to set it up without using JavaScript, which primarily has not beed used for this project.
