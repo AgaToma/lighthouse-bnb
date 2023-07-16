@@ -335,7 +335,8 @@ Social accounts, groups and emails models from allauth modules visible in Django
 ### Design
 
 Site is responsive and features multiple pages to avoid clutter. It features Bootstrap navbar and cards to
-enhance balance and responsivity and also Bootstrap carousel for an attractive look.
+enhance balance and responsiveness and also Bootstrap carousel for an attractive look. Bootrstrap collapsibles were implemented
+in description on home page to avoid text clutter on smaller devices. Navbar links have active class, all links highlight on hover with the exception of logo link. This link is primarily implemented for SEO optimization and highlighting logo was not in harmony with the rest of navbar.
 
 ### Color palette
 
